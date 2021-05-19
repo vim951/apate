@@ -7,7 +7,7 @@
 #include "debugmenot.h"
 #include "test_vdso.h"
 
-static int detect(void)
+int test_vdso_detect()
 {
     unsigned long tos;
     unsigned long vdso = getauxval(AT_SYSINFO_EHDR);
@@ -33,9 +33,9 @@ static int detect(void)
         return RESULT_NO;
 }
 
+/*
 static int cleanup(void)
 {
-    /* Nothing to be done */ 
     return 0;
 }
 
@@ -58,3 +58,4 @@ int register_test_vdso(struct test_chain *all_tests, unsigned int test_bmp)
 
     return 0;
 }
+*/

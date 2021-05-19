@@ -3,6 +3,7 @@
 
 #include "debugmenot.h"
 
+int test_vdso_detect();
 int register_test_vdso(struct test_chain *, unsigned int);
 
 #define TEST_ID_VDSO   2

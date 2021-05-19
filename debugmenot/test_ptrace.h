@@ -3,6 +3,7 @@
 
 #include "debugmenot.h"
 
+int test_ptrace_detect();
 int register_test_ptrace(struct test_chain *, unsigned int);
 
 #define TEST_ID_PTRACE   1

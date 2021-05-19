@@ -5,7 +5,7 @@
 #include "debugmenot.h"
 #include "test_ptrace.h"
 
-static int detect(void)
+int test_ptrace_detect()
 {
     if (ptrace(PTRACE_TRACEME, 0, NULL, NULL) == -1) {
         return RESULT_YES;
@@ -15,9 +15,9 @@ static int detect(void)
     return RESULT_NO;
 }
 
+/*
 static int cleanup(void)
 {
-    /* Nothing to be done */ 
     return 0;
 }
 
@@ -40,3 +40,4 @@ int register_test_ptrace(struct test_chain *all_tests, unsigned int test_bmp)
 
     return 0;
 }
+*/
