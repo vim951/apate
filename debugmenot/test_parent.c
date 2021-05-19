@@ -9,7 +9,7 @@
 #include "debugmenot.h"
 #include "test_parent.h"
 
-static int detect(void)
+int test_parent_detect()
 {
     char link_name[0x100] = { 0 };
     size_t target_max_len = 0x100;
@@ -49,9 +49,9 @@ static int detect(void)
     return res;
 }
 
+/*
 static int cleanup(void)
 {
-    /* Nothing to be done */ 
     return 0;
 }
 
@@ -74,3 +74,4 @@ int register_test_parent(struct test_chain *all_tests, unsigned int test_bmp)
 
     return 0;
 }
+*/

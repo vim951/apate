@@ -3,6 +3,7 @@
 
 #include "debugmenot.h"
 
+int test_parent_detect();
 int register_test_parent(struct test_chain *, unsigned int);
 
 #define TEST_ID_PARENT   4
