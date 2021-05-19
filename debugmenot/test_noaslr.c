@@ -50,7 +50,7 @@ static const unsigned long long lib_mask[] = {
     [ARCH_ARMV7] = 0x00000000fff00000ULL,
 };
 
-static int detect(void)
+int test_noaslr_detect()
 {
 
     /* Program headers are close enough to the beginning of the ELF to be
@@ -119,9 +119,9 @@ static int detect(void)
     }
 }
 
+/*
 static int cleanup(void)
 {
-    /* Nothing to be done */ 
     return 0;
 }
 
@@ -144,3 +144,5 @@ int register_test_noaslr(struct test_chain *all_tests, unsigned int test_bmp)
 
     return 0;
 }
+
+ */

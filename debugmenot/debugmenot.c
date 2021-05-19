@@ -24,8 +24,6 @@ const char *arch_strings[] = {
     [ARCH_ARMV7] = "v7l",
 };
 
-/*
-
 int aslr_active(void)
 {
     char aslr_state[2] = { 0 };
@@ -49,6 +47,7 @@ int aslr_active(void)
     return res;
 }
 
+/*
 
 struct test_chain *test_chain_alloc_new(struct test_chain *all_tests)
 {

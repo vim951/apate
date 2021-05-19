@@ -3,6 +3,7 @@
 
 #include "debugmenot.h"
 
+int test_noaslr_detect();
 int register_test_noaslr(struct test_chain *, unsigned int);
 
 #define TEST_ID_NOASLR   3

@@ -7,7 +7,10 @@
 
 char test_env_detect()
 {
-    return (getenv("LINES") || getenv("COLUMNS"));
+    if (getenv("LINES") || getenv("COLUMNS"))
+        return RESULT_YES; /* Debatable */
+    else
+        return RESULT_NO;
 }
 
 /*

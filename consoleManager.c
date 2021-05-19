@@ -8,6 +8,9 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
+//To exploit results
+#include "debugmenot/debugmenot.h"
+
 enum Color{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, CYAN, WHITE, NO_COLOR};
 
 //Reference: https://stackoverflow.com/questions/1022957/getting-terminal-width-in-c
@@ -23,7 +26,7 @@ void setConsoleColor(int colorID){
 
 void printHeader(char* sectionName){
 
-    setConsoleColor(YELLOW);
+    setConsoleColor(PURPLE);
 
     int terminalWidth = getTerminalWidth();
     int sectionWidth = (int) strlen(sectionName) + 2;
@@ -40,7 +43,7 @@ void printHeader(char* sectionName){
     printf("\n");
 }
 
-void printResult(char* testName, char result){
+void printResult(char* testName, int result){
 
     int terminalWidth = getTerminalWidth();
     int nameLength = (int) strlen(testName);
@@ -53,11 +56,18 @@ void printResult(char* testName, char result){
         printf(" ");
     }
 
-    if(result){
-        setConsoleColor(GREEN);
-        printf("[ SUCCESS  ]\n");
-    }else{
-        setConsoleColor(RED);
-        printf("[ DETECTED ]\n");
+    switch (result) {
+        case RESULT_NO:
+            setConsoleColor(GREEN);
+            printf("[ SUCCESS  ]\n");
+            break;
+        case RESULT_YES:
+            setConsoleColor(RED);
+            printf("[ DETECTED ]\n");
+            break;
+        default:
+            setConsoleColor(YELLOW);
+            printf("[ UNKNOWN  ]\n");
+            break;
     }
 }

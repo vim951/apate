@@ -24,7 +24,11 @@ static const size_t arch_ret_len_ldhook[] = {
 
 int test_ldhook_detect(void)
 {
-    return memcmp((void *)*(&_r_debug + 2), arch_ret_ldhook[this_arch], arch_ret_len_ldhook[this_arch]);
+    if (memcmp((void *)*(&_r_debug + 2), arch_ret_ldhook[this_arch],
+               arch_ret_len_ldhook[this_arch]))
+        return RESULT_YES;
+    else
+        return RESULT_NO;
 }
 /*
 static int cleanup(void)
