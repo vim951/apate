@@ -1,0 +1,6 @@
+#ifndef APATE_MACADDRESS_H
+#define APATE_MACADDRESS_H
+
+int checkMacAddresses();
+
+#endif //APATE_MACADDRESS_H

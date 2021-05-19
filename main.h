@@ -14,5 +14,6 @@
 
 #include "antiVM/hypervisorFlag.h"
 #include "antiVM/fileSystemSpace.h"
+#include "antiVM/macAddress.h"
 
 #endif //APATE_MAIN_H
