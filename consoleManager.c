@@ -41,6 +41,17 @@ void setConsoleColor(int colorID){
     printf("\033[0;3%dm", colorID);
 }
 
+/*
+void rightAlign(char* text){
+    int terminalWidth = getTerminalWidth();
+    int textWidth = (int) strlen(text);
+    for (int i=0 ; i<terminalWidth-textWidth; i++){
+        printf("%c", ' ');
+    }
+    printf("%s\n", text);
+}
+ */
+
 void surroundText(char* text, char placeholder){
     int terminalWidth = getTerminalWidth();
     int textWidth = (int) strlen(text) + 2;
@@ -58,6 +69,7 @@ void surroundText(char* text, char placeholder){
 }
 
 void printTitle(){
+    printf("By Victor MASIAK");
     setConsoleColor(BLUE);
     printf("\n\n");
     for (int i=0 ; i<11 ; i++){
