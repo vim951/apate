@@ -19,7 +19,7 @@ int main() {
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
     printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());
     printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
-    printResult("Looks the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
+    printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
     printResult("Inspect currently loaded modules.", 1);
     return 0;
 }
