@@ -10,5 +10,5 @@ int checkFileSystemSpace(){
         return RESULT_UNKNOWN;
     }
 
-    return (stat.f_bsize * stat.f_blocks / 1000000000)>=100 ? RESULT_SUCCESS : RESULT_FAILURE;
+    return (stat.f_bsize * stat.f_blocks / 1000000000)>=120 ? RESULT_SUCCESS : RESULT_FAILURE;
 }
