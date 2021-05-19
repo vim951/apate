@@ -1,0 +1,6 @@
+#ifndef APATE_FILESYSTEMSPACE_H
+#define APATE_FILESYSTEMSPACE_H
+
+int checkFileSystemSpace();
+
+#endif //APATE_FILESYSTEMSPACE_H
