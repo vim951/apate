@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 #include "test_env.h"
 

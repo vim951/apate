@@ -1,22 +1,19 @@
-#include "consoleManager.h"
-#include "debugmenot/debugmenot.h"
-#include "debugmenot/test_env.h"
-#include "debugmenot/test_nearheap.h"
-#include "debugmenot/test_ldhook.h"
-#include "debugmenot/test_noaslr.h"
-#include "debugmenot/test_parent.h"
-#include "debugmenot/test_ptrace.h"
-#include "debugmenot/test_vdso.h"
+#include "main.h"
 
 int main() {
+
+    printTitle();
+
     printHeader("ANTI-DEBUGGING");
     debugmenotInit();
-    printResult("test_env_detect", test_env_detect());
-    printResult("test_ldhook_detect", test_ldhook_detect());
-    printResult("test_nearheap_detect", test_nearheap_detect());
-    printResult("test_noaslr_detect", test_noaslr_detect());
-    printResult("test_parent_detect", test_parent_detect());
-    printResult("test_ptrace_detect", test_ptrace_detect());
-    printResult("test_vdso_detect", test_vdso_detect());
+    printResult("Checks existence of LINES and COLUMNS environment variables.", test_env_detect());
+    printResult("Checks for breakpoint in _dl_debug_state", test_ldhook_detect());
+    printResult("Compares beginning of the heap to address of own BSS.", test_nearheap_detect());
+    printResult("Checks base address of ELF and shared libraries for hard-coded values used by GDB.", test_noaslr_detect());
+    printResult("Checks whether parent's name is gdb, strace or ltrace.", test_parent_detect());
+    printResult("Tries to debug itself by calling ptrace(PTRACE_TRACEME, ...)", test_ptrace_detect());
+    printResult("Measures distance of vdso and stack.", test_vdso_detect());
+
+    printHeader("ANTI-VM");
     return 0;
 }

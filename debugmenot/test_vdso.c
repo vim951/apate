@@ -4,6 +4,7 @@
 #include <sys/auxv.h>
 #include <string.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 #include "test_vdso.h"
 

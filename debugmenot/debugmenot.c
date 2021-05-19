@@ -5,6 +5,7 @@
 #include <limits.h>
 #include <sys/auxv.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 
 #include "test_env.h"

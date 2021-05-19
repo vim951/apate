@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <libgen.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 #include "test_parent.h"
 

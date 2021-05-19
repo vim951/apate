@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 #include "test_noaslr.h"
 

@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 #include "test_nearheap.h"
 

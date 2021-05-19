@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../constants.h"
 #include "debugmenot.h"
 #include "test_ldhook.h"
 

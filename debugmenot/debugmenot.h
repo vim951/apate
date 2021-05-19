@@ -8,10 +8,6 @@ int debugmenotInit();
 
 #define DEBUG
 
-#define RESULT_NO  0
-#define RESULT_UNK 1
-#define RESULT_YES 2
-
 struct test_chain {
     /* Performs the actual test. Nonzero return means "debugger found" */
     int (*detect)(void);
