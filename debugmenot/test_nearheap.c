@@ -13,11 +13,7 @@ int test_nearheap_detect(void)
     static unsigned char bss;
     unsigned char *probe = malloc(0x10);
 
-    if (probe - &bss > 0x20000) {
-        return RESULT_NO;
-    } else {
-        return RESULT_YES;
-    }
+    return !(probe - &bss > 0x20000);
 
 }
 

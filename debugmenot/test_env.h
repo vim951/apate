@@ -3,6 +3,7 @@
 
 #include "debugmenot.h"
 
+char test_env_detect();
 int register_test_env(struct test_chain *, unsigned int);
 
 #define TEST_ID_ENV   0

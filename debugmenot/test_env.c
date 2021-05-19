@@ -5,17 +5,14 @@
 #include "debugmenot.h"
 #include "test_env.h"
 
-static int detect(void)
+char test_env_detect()
 {
-    if (getenv("LINES") || getenv("COLUMNS"))
-        return RESULT_YES; /* Debatable */
-    else 
-        return RESULT_NO;
+    return (getenv("LINES") || getenv("COLUMNS"));
 }
 
+/*
 static int cleanup(void)
 {
-    /* Nothing to be done */ 
     return 0;
 }
 
@@ -38,3 +35,4 @@ int register_test_env(struct test_chain *all_tests, unsigned int test_bmp)
 
     return 0;
 }
+*/

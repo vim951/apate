@@ -44,7 +44,7 @@ void printResult(char* testName, char result){
 
     int terminalWidth = getTerminalWidth();
     int nameLength = (int) strlen(testName);
-    int spaceToFill = terminalWidth - nameLength - 11;
+    int spaceToFill = terminalWidth - nameLength - 12;
 
     setConsoleColor(NO_COLOR);
     printf("%s", testName);
@@ -55,9 +55,9 @@ void printResult(char* testName, char result){
 
     if(result){
         setConsoleColor(GREEN);
-        printf("[ SUCCESS ]");
+        printf("[ SUCCESS  ]\n");
     }else{
         setConsoleColor(RED);
-        printf("[ FAILURE ]");
+        printf("[ DETECTED ]\n");
     }
 }

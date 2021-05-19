@@ -1,7 +1,7 @@
 #ifndef _GDB_DETECT_H
 #define _GDB_DETECT_H
 
-int debugmenotMain();
+int debugmenotInit();
 
 #define VERSION_MAJOR "1"
 #define VERSION_MINOR "0"

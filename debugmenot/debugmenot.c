@@ -24,6 +24,8 @@ const char *arch_strings[] = {
     [ARCH_ARMV7] = "v7l",
 };
 
+/*
+
 int aslr_active(void)
 {
     char aslr_state[2] = { 0 };
@@ -139,17 +141,24 @@ static void print_available_tests(FILE *fp) {
     return;
 }
 
-int debugmenotMain(){
+ */
+
+int debugmenotInit(){
+
+    /*
     int res = 0;
     unsigned int test_bmp = UINT_MAX;
     char *endptr = NULL;
     struct test_chain head = { NULL, NULL, NULL, NULL, NULL };
     struct test_chain *cur = NULL;
+     */
 
     for (unsigned int i = 0; i < sizeof(arch_strings) / sizeof(arch_strings[0]); i++) {
         if (!strcmp((const char *)getauxval(AT_PLATFORM), arch_strings[i]))
             this_arch = i;
     }
+
+    /*
 
     if (this_arch == UINT_MAX) {
         fprintf(stderr, "Running on unsupported architecture.\n");
@@ -202,6 +211,6 @@ int debugmenotMain(){
 
     puts("");
     test_chain_free_all(head.next_test);
-    
+    */
 
 }
