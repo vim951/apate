@@ -15,5 +15,6 @@ int main() {
     printResult("Measures distance of vdso and stack.", test_vdso_detect());
 
     printHeader("ANTI-VM");
+    printResult("Checks the hypervisor flag in /proc/cpuinfo", checkHypervisorFlag());
     return 0;
 }
