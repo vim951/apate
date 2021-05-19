@@ -94,11 +94,11 @@ void printResult(char* testName, int result){
     }
 
     switch (result) {
-        case RESULT_NO:
+        case RESULT_SUCCESS:
             setConsoleColor(GREEN);
             printf("[ SUCCESS ]\n");
             break;
-        case RESULT_YES:
+        case RESULT_FAILURE:
             setConsoleColor(RED);
             printf("[ FAILURE ]\n");
             break;

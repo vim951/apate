@@ -1,8 +1,8 @@
 #ifndef APATE_CONSTANTS_H
 #define APATE_CONSTANTS_H
 
-#define RESULT_NO  0
-#define RESULT_UNK 1
-#define RESULT_YES 2
+#define RESULT_SUCCESS  0
+#define RESULT_UNKNOWN 1
+#define RESULT_FAILURE 2
 
 #endif //APATE_CONSTANTS_H

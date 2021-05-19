@@ -13,5 +13,6 @@
 #include "debugmenot/test_vdso.h"
 
 #include "antiVM/hypervisorFlag.h"
+#include "antiVM/fileSystemSpace.h"
 
 #endif //APATE_MAIN_H

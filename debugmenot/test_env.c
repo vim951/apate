@@ -9,9 +9,9 @@
 char test_env_detect()
 {
     if (getenv("LINES") || getenv("COLUMNS"))
-        return RESULT_YES; /* Debatable */
+        return RESULT_FAILURE; /* Debatable */
     else
-        return RESULT_NO;
+        return RESULT_SUCCESS;
 }
 
 /*

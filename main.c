@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h> //For testing purposes only
 
 int main() {
 
@@ -16,5 +17,6 @@ int main() {
 
     printHeader("ANTI-VM");
     printResult("Checks the hypervisor flag in /proc/cpuinfo", checkHypervisorFlag());
+    printResult("Checks if the file system is bigger than 100GB", checkFileSystemSpace());
     return 0;
 }

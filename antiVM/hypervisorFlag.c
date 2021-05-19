@@ -10,10 +10,10 @@ int checkWordInFile(FILE* file, char *str) {
     char temp[tempSize];
     while(fgets(temp, tempSize, file) != NULL) {
         if((strstr(temp, str)) != NULL) {
-            return RESULT_YES;
+            return RESULT_FAILURE;
         }
     }
-    return RESULT_NO;
+    return RESULT_SUCCESS;
 }
 
 int checkHypervisorFlag(){
@@ -22,7 +22,7 @@ int checkHypervisorFlag(){
     file = fopen("/proc/cpuinfo", "rb");
 
     if (file == NULL) {
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     } else {
         int result = checkWordInFile(file, "hypervisor");
         fclose (file);

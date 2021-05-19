@@ -15,23 +15,23 @@ int test_vdso_detect()
 
     if (this_arch == ARCH_ARM64 || this_arch == ARCH_I386) {
         /* This trick unfortunately does not work on 32bit x86 and ARM64 */
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
     if (!vdso) {
         /* Auxiliary vector does not contain vdso entry. Unknown result. */
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
-    if (!(aslr_active() == RESULT_YES)) {
+    if (!(aslr_active() == RESULT_FAILURE)) {
         /* No ASLR on this machine. Unknown result */
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
     if ((unsigned long)&tos > vdso)
-        return RESULT_YES;
+        return RESULT_FAILURE;
     else
-        return RESULT_NO;
+        return RESULT_SUCCESS;
 }
 
 /*

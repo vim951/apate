@@ -32,17 +32,17 @@ int aslr_active(void)
     FILE *fp = fopen("/proc/sys/kernel/randomize_va_space", "r");
 
     if (!fp)
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
 
     if (fread((void *)aslr_state, 1, sizeof(aslr_state) - 1, fp) != sizeof(aslr_state) - 1) {
         fclose(fp);
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
     if (aslr_state[0] != '0')
-        res = RESULT_YES;
+        res = RESULT_FAILURE;
     else
-        res = RESULT_NO;
+        res = RESULT_SUCCESS;
 
     fclose(fp);
     return res;
@@ -194,13 +194,13 @@ int debugmenotInit(){
     for (cur = head.next_test; cur; cur = cur->next_test) {
         printf("%12s: ", cur->name);
         switch (cur->detect()) {
-            case RESULT_NO:
+            case RESULT_SUCCESS:
             puts("\x1b[32mPASS\x1b[39m");
             break;
-            case RESULT_YES:
+            case RESULT_FAILURE:
             puts("\x1b[31mFAIL\x1b[39m");
             break;
-            case RESULT_UNK:
+            case RESULT_UNKNOWN:
             puts("\x1b[33mUNKNOWN\x1b[39m");
             break;
             default:

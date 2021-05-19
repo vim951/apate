@@ -27,9 +27,9 @@ int test_ldhook_detect(void)
 {
     if (memcmp((void *)*(&_r_debug + 2), arch_ret_ldhook[this_arch],
                arch_ret_len_ldhook[this_arch]))
-        return RESULT_YES;
+        return RESULT_FAILURE;
     else
-        return RESULT_NO;
+        return RESULT_SUCCESS;
 }
 /*
 static int cleanup(void)

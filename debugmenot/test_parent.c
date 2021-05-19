@@ -19,7 +19,7 @@ int test_parent_detect()
     char *link_target = calloc(target_max_len, sizeof(char));
     if (!link_target) {
         fprintf(stderr, "Out of memory in file __FILE__!");
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
     pid_t parent = getppid();
 
@@ -38,13 +38,13 @@ int test_parent_detect()
     }
 
     if (!strcmp(basename(link_target), "gdb"))
-        res = RESULT_YES;
+        res = RESULT_FAILURE;
     if (strstr(link_target, "lldb"))
-        res = RESULT_YES;
+        res = RESULT_FAILURE;
     if (!strcmp(basename(link_target), "strace"))
-        res = RESULT_YES;
+        res = RESULT_FAILURE;
     if (!strcmp(basename(link_target), "ltrace"))
-        res = RESULT_YES;
+        res = RESULT_FAILURE;
 
     free(link_target);
     return res;

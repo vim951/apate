@@ -62,16 +62,16 @@ int test_noaslr_detect()
     struct utsname utsname;
 
     if (!elf || !ld) {
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
-    if (!(aslr_active() == RESULT_YES)) {
+    if (!(aslr_active() == RESULT_FAILURE)) {
         /* No ASLR on this machine. Unknown result */
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
     if (uname(&utsname) == -1) {
-        return RESULT_UNK;
+        return RESULT_UNKNOWN;
     }
 
     switch (this_arch) {
@@ -79,23 +79,23 @@ int test_noaslr_detect()
         case ARCH_ARM64:
             if (((elf & elf_mask[this_arch]) == elf_bits[this_arch]) &&
                 ((ld & lib_mask[this_arch]) == lib_bits[this_arch]))
-                return RESULT_YES;
-            return RESULT_NO;
+                return RESULT_FAILURE;
+            return RESULT_SUCCESS;
 
         case ARCH_I386:
             if (!strcmp(utsname.machine, arch_strings[ARCH_AMD64])) {
                 /* 32 bit binary running on 64 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits[this_arch]) &&
                     ((ld & lib_mask[this_arch]) == lib_bits[this_arch]))
-                    return RESULT_YES;
-                return RESULT_NO;
+                    return RESULT_FAILURE;
+                return RESULT_SUCCESS;
 
             } else {
                 /* 32 bit binary running on 32 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits_native[this_arch]) &&
                     ((ld & lib_mask[this_arch]) == lib_bits_native[this_arch]))
-                    return RESULT_YES;
-                return RESULT_NO;
+                    return RESULT_FAILURE;
+                return RESULT_SUCCESS;
 
             }
 
@@ -104,19 +104,19 @@ int test_noaslr_detect()
                 /* 32 bit binary running on 64 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits[this_arch]) &&
                     ((ld & lib_mask[this_arch]) == lib_bits[this_arch]))
-                    return RESULT_YES;
-                return RESULT_NO;
+                    return RESULT_FAILURE;
+                return RESULT_SUCCESS;
 
             } else {
                 /* 32 bit binary running on 32 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits_native[this_arch]) &&
                     ((ld & lib_mask[this_arch]) == lib_bits_native[this_arch]))
-                    return RESULT_YES;
-                return RESULT_NO;
+                    return RESULT_FAILURE;
+                return RESULT_SUCCESS;
 
             }
         default:
-            return RESULT_UNK;
+            return RESULT_UNKNOWN;
     }
 }
 
