@@ -103,8 +103,8 @@ void printResult(char* testName, int result){
             printf("[ FAILURE ]\n");
             break;
         default:
-            setConsoleColor(NO_COLOR);
-            printf("[ UNKNOWN  ]\n");
+            setConsoleColor(YELLOW);
+            printf("[ UNKNOWN ]\n");
             break;
     }
 

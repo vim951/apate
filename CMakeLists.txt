@@ -35,4 +35,4 @@ add_executable(
         antiVM/fileSystemSpace.c
         antiVM/fileSystemSpace.h
         antiVM/macAddress.c
-        antiVM/macAddress.h)
+        antiVM/macAddress.h antiVM/ramSize.c antiVM/ramSize.h)
