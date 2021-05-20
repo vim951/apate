@@ -16,11 +16,11 @@ int main() {
     printResult("Measures distance of vdso and stack.", test_vdso_detect());
 
     printHeader("ANTI-VM");
-    printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
-    printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());
     printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
     printResult("Inspect currently loaded modules.", checkLoadedModulesFromLSMOD());
+    printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
+    printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());
 
     printHeader("ANTI-FAKE");
     printResult("Inspect browsers histories", checkBrowserHistory());
