@@ -16,9 +16,10 @@ int main() {
     printResult("Measures distance of vdso and stack.", test_vdso_detect());
 
     printHeader("ANTI-VM");
-    printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
     printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD());
+    printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
+    printResult("Scans the content of /usr/bin for known VM names", checkUserNames());
     printResult("Checks the screen resolution", checkDisplayResolution());
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
     printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());

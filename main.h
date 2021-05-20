@@ -18,6 +18,7 @@
 #include "antiVM/ramSize.h"
 #include "antiVM/loadedModulesFromLSMOD.h"
 #include "antiVM/screenResolution.h"
+#include "antiVM/userNames.h"
 
 #include "antiFake/browserHistory.h"
 #include "antiFake/upTime.h"
