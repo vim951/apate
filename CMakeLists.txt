@@ -28,6 +28,8 @@ add_executable(
         antiVM/loadedModulesFromLSMOD.c antiVM/loadedModulesFromLSMOD.h
 
         antiFake/firefoxHistory.c antiFake/firefoxHistory.h
-        antiFake/chromeHistory.c antiFake/chromeHistory.h antiFake/browserHistory.c antiFake/browserHistory.h antiFake/upTime.c antiFake/upTime.h)
+        antiFake/chromeHistory.c antiFake/chromeHistory.h antiFake/browserHistory.c antiFake/browserHistory.h antiFake/upTime.c antiFake/upTime.h antiVM/screenResolution.c antiVM/screenResolution.h)
 
-target_link_libraries(apate LINK_PUBLIC sqlite3)
+find_package(X11 REQUIRED)
+include_directories(${X11_INCLUDE_DIR})
+target_link_libraries(apate LINK_PUBLIC ${X11_LIBRARIES} sqlite3)

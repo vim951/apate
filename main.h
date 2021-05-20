@@ -17,6 +17,7 @@
 #include "antiVM/macAddress.h"
 #include "antiVM/ramSize.h"
 #include "antiVM/loadedModulesFromLSMOD.h"
+#include "antiVM/screenResolution.h"
 
 #include "antiFake/browserHistory.h"
 #include "antiFake/upTime.h"
