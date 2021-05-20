@@ -20,6 +20,7 @@
 #include "antiVM/screenResolution.h"
 #include "antiVM/userNames.h"
 #include "antiVM/devicesScsi.h"
+#include "antiVM/biosVendor.h"
 
 #include "antiFake/browserHistory.h"
 #include "antiFake/upTime.h"

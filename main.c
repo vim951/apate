@@ -20,6 +20,7 @@ int main() {
     printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD());
     printResult("Compares suspicious MAC addresses.", checkMacAddresses());
     printResult("Looks for suspicious SCSI devices.", checkScsiDevices());
+    printResult("Looks for suspicious bios vendor.", checkBiosVendor());
     printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames());
     printResult("Checks the screen resolution.", checkDisplayResolution());
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
