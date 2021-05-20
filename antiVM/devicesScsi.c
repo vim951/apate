@@ -7,7 +7,7 @@ char* SUSPICIOUS_SCSI_DEVICES[] = {
 int SUSPICIOUS_SCSI_DEVICES_SIZE = 2;
 
 /**
- * Looks for VM SCSI devices
+ * Looks for suspicious SCSI devices
  * @return If /proc/scsi/scsi could not be opened: RESULT_UNKNOWN, else if a suspicious device was found: RESULT_FAILURE, else: RESULT_SUCCESS
  */
 int checkScsiDevices()
