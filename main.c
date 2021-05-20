@@ -18,9 +18,10 @@ int main() {
     printHeader("ANTI-VM");
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
     printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD());
-    printResult("Compares suspicious MAC addresses.", checkMacAddresses());
+    printResult("Looks for suspicious MAC addresses.", checkMacAddresses());
     printResult("Looks for suspicious SCSI devices.", checkScsiDevices());
     printResult("Looks for suspicious bios vendor.", checkBiosVendor());
+    printResult("Looks for suspicious product name.", checkProductName());
     printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames());
     printResult("Checks the screen resolution.", checkDisplayResolution());
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
