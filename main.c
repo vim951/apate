@@ -18,12 +18,12 @@ int main() {
     printHeader("ANTI-VM");
     printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
-    printResult("Inspect currently loaded modules.", checkLoadedModulesFromLSMOD());
+    printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD());
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
     printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());
 
     printHeader("ANTI-FAKE");
-    printResult("Inspect browsers histories", checkBrowserHistory());
+    printResult("Inspects browsers histories", checkBrowserHistory());
     printResult("Checks that the system has been running for at least 30 minutes", checkUpTime());
 
     return 0;
