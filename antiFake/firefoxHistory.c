@@ -46,7 +46,7 @@ int firefoxSqlCallback(void *NotUsed, int argc, char **argv, char **azColName) {
 }
 
 /**
- * Queries the history database of firefox, and verifies it is legitimate
+ * Queries the history database of firefox, and verifies if it is legitimate
  * @return If the history could not be read: RESULT_UNKNOWN, else if the history is legitimate: RESULT_SUCCESS, else: RESULT_FAILURE
  */
 int checkFirefoxHistory(){
