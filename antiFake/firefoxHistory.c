@@ -1,7 +1,6 @@
 #include "firefoxHistory.h"
 
-time_t olderFirefoxItem, now, x_days_ago;
-struct tm x_days_ago_tm;
+time_t olderFirefoxItem;
 int countRecentFirefoxItems;
 
 /**
@@ -53,10 +52,6 @@ int firefoxSqlCallback(void *NotUsed, int argc, char **argv, char **azColName) {
 int checkFirefoxHistory(){
 
     //Initialize variables used to check if the history is legit or not
-    now                      = time(NULL);
-    x_days_ago_tm            = *localtime(&now);
-    x_days_ago_tm.tm_mday   -= COUNT_OVER_LAST_X_DAYS;
-    x_days_ago               = mktime(&x_days_ago_tm);
     olderFirefoxItem         = time(NULL);
     countRecentFirefoxItems  = 0;
 

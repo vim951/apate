@@ -9,6 +9,7 @@
 
 #include "../constants.h"
 #include "../files.h"
+#include "browserHistory.h"
 
 //Declares strptime header
 char *strptime(const char *buf, const char *format, struct tm *tm);

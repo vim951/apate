@@ -1,7 +1,6 @@
 #include "chromeHistory.h"
 
-time_t olderChromeItem, now, x_days_ago;
-struct tm x_days_ago_tm;
+time_t olderChromeItem;
 int countRecentChromeItems;
 
 

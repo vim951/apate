@@ -28,6 +28,6 @@ add_executable(
         antiVM/loadedModulesFromLSMOD.c antiVM/loadedModulesFromLSMOD.h
 
         antiFake/firefoxHistory.c antiFake/firefoxHistory.h
-        antiFake/chromeHistory.c antiFake/chromeHistory.h)
+        antiFake/chromeHistory.c antiFake/chromeHistory.h antiFake/browserHistory.c antiFake/browserHistory.h)
 
 target_link_libraries(apate LINK_PUBLIC sqlite3)

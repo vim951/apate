@@ -23,8 +23,7 @@ int main() {
     printResult("Inspect currently loaded modules.", checkLoadedModulesFromLSMOD());
 
     printHeader("ANTI-FAKE");
-    printResult("Inspect firefox history", checkFirefoxHistory());
-    printResult("Inspect chrome history", checkChromeHistory());
+    printResult("Inspect browsers histories", checkBrowserHistory());
 
     return 0;
 }
