@@ -20,6 +20,6 @@ int main() {
     printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());
     printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
-    printResult("Inspect currently loaded modules.", 1);
+    printResult("Inspect currently loaded modules.", checkLoadedModulesFromLSMOD());
     return 0;
 }

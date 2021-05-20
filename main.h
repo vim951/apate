@@ -16,5 +16,6 @@
 #include "antiVM/fileSystemSpace.h"
 #include "antiVM/macAddress.h"
 #include "antiVM/ramSize.h"
+#include "antiVM/loadedModulesFromLSMOD.h"
 
 #endif //APATE_MAIN_H
