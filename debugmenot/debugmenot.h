@@ -9,13 +9,13 @@ int debugmenotInit();
 #define DEBUG
 
 struct test_chain {
-    /* Performs the actual test. Nonzero return means "debugger found" */
+    /* Performs the actual checkFirefoxHistory. Nonzero return means "debugger found" */
     int (*detect)(void);
     /* Cleanup any leftovers for asynchronous tests */
     int (*cleanup)(void);
-    /* Human readable description of the test. */
+    /* Human readable description of the checkFirefoxHistory. */
     const char *description;
-    /* Short, but UNIQUELY identifying name of the test. */
+    /* Short, but UNIQUELY identifying name of the checkFirefoxHistory. */
     const char *name;
     struct test_chain *next_test;
 };

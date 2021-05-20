@@ -6,12 +6,11 @@ set(CMAKE_C_STANDARD 11)
 add_executable(
         apate
 
-        main.c
-        main.h
-        constants.h
+        main.c main.h
+        files.c files.h
+        consoleManager.c consoleManager.h
 
-        consoleManager.c
-        consoleManager.h
+        constants.h
 
         debugmenot/debugmenot.c debugmenot/debugmenot.h
         debugmenot/test_env.c debugmenot/test_env.h
@@ -27,4 +26,7 @@ add_executable(
         antiVM/macAddress.c antiVM/macAddress.h
         antiVM/ramSize.c antiVM/ramSize.h
         antiVM/loadedModulesFromLSMOD.c antiVM/loadedModulesFromLSMOD.h
-        aux.c aux.h)
+
+        antiFake/firefoxHistory.c antiFake/firefoxHistory.h)
+
+target_link_libraries(apate LINK_PUBLIC sqlite3)

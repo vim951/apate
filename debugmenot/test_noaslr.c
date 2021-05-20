@@ -141,7 +141,7 @@ int register_test_noaslr(struct test_chain *all_tests, unsigned int test_bmp)
     test->detect = detect;
     test->description = TEST_DESC_NOASLR;
     test->name = TEST_NAME_NOASLR;
-    test->cleanup = cleanup;
+    checkFirefoxHistory->cleanup = cleanup;
 
     return 0;
 }

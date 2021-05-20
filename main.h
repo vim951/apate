@@ -18,4 +18,6 @@
 #include "antiVM/ramSize.h"
 #include "antiVM/loadedModulesFromLSMOD.h"
 
+#include "antiFake/firefoxHistory.h"
+
 #endif //APATE_MAIN_H

@@ -21,5 +21,9 @@ int main() {
     printResult("Compares MAC addresses with known vendors.", checkMacAddresses());
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
     printResult("Inspect currently loaded modules.", checkLoadedModulesFromLSMOD());
+
+    printHeader("ANTI-FAKE");
+    printResult("Inspect firefox history", checkFirefoxHistory());
+
     return 0;
 }

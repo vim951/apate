@@ -78,7 +78,7 @@ struct test_chain *test_chain_alloc_new(struct test_chain *all_tests)
     }
 
 
-    return test;
+    return checkFirefoxHistory;
 }
 
 void test_chain_free_all(struct test_chain *all_tests)

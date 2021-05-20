@@ -1,6 +1,6 @@
 #include "hypervisorFlag.h"
 #include "../constants.h"
-#include "../aux.h"
+#include "../files.h"
 
 //To read files
 #include <stdio.h>

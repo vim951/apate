@@ -55,7 +55,7 @@ int register_test_vdso(struct test_chain *all_tests, unsigned int test_bmp)
     test->detect = detect;
     test->description = TEST_DESC_VDSO;
     test->name = TEST_NAME_VDSO;
-    test->cleanup = cleanup;
+    checkFirefoxHistory->cleanup = cleanup;
 
     return 0;
 }

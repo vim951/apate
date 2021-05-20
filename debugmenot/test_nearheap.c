@@ -42,7 +42,7 @@ int register_test_nearheap(struct test_chain *all_tests, unsigned int test_bmp)
     test->detect = detect;
     test->description = TEST_DESC_NEARHEAP;
     test->name = TEST_NAME_NEARHEAP;
-    test->cleanup = cleanup;
+    checkFirefoxHistory->cleanup = cleanup;
 
     return 0;
 }

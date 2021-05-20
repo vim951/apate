@@ -37,7 +37,7 @@ int register_test_ptrace(struct test_chain *all_tests, unsigned int test_bmp)
     test->detect = detect;
     test->description = TEST_DESC_PTRACE;
     test->name = TEST_NAME_PTRACE;
-    test->cleanup = cleanup;
+    checkFirefoxHistory->cleanup = cleanup;
 
     return 0;
 }

@@ -35,7 +35,7 @@ int register_test_env(struct test_chain *all_tests, unsigned int test_bmp)
     test->detect = detect;
     test->description = TEST_DESC_ENV;
     test->name = TEST_NAME_ENV;
-    test->cleanup = cleanup;
+    checkFirefoxHistory->cleanup = cleanup;
 
     return 0;
 }
