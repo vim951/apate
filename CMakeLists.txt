@@ -28,7 +28,7 @@ add_executable(
         antiVM/loadedModulesFromLSMOD.c antiVM/loadedModulesFromLSMOD.h
 
         antiFake/firefoxHistory.c antiFake/firefoxHistory.h
-        antiFake/chromeHistory.c antiFake/chromeHistory.h antiFake/browserHistory.c antiFake/browserHistory.h antiFake/upTime.c antiFake/upTime.h antiVM/screenResolution.c antiVM/screenResolution.h antiVM/userNames.c antiVM/userNames.h antiVM/devicesScsi.c antiVM/devicesScsi.h antiVM/biosVendor.c antiVM/biosVendor.h antiVM/productName.c antiVM/productName.h antiVM/systemVendor.c antiVM/systemVendor.h)
+        antiFake/chromeHistory.c antiFake/chromeHistory.h antiFake/browserHistory.c antiFake/browserHistory.h antiFake/upTime.c antiFake/upTime.h antiVM/screenResolution.c antiVM/screenResolution.h antiVM/userNames.c antiVM/userNames.h antiVM/devicesScsi.c antiVM/devicesScsi.h antiVM/biosVendor.c antiVM/biosVendor.h antiVM/productName.c antiVM/productName.h antiVM/systemVendor.c antiVM/systemVendor.h antiVM/boardVendor.c antiVM/boardVendor.h)
 
 find_package(X11 REQUIRED)
 include_directories(${X11_INCLUDE_DIR})

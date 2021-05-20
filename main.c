@@ -21,6 +21,7 @@ int main() {
     printResult("Looks for suspicious MAC addresses.", checkMacAddresses());
     printResult("Looks for suspicious SCSI devices.", checkScsiDevices());
     printResult("Looks for suspicious bios vendor.", checkBiosVendor());
+    printResult("Looks for suspicious board vendor.", checkBoardVendor());
     printResult("Looks for suspicious product name.", checkProductName());
     printResult("Looks for suspicious system vendors.", checkSysVendor());
     printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames());

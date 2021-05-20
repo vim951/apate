@@ -23,6 +23,7 @@
 #include "antiVM/biosVendor.h"
 #include "antiVM/productName.h"
 #include "antiVM/systemVendor.h"
+#include "antiVM/boardVendor.h"
 
 #include "antiFake/browserHistory.h"
 #include "antiFake/upTime.h"
