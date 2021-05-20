@@ -22,6 +22,7 @@
 #include "antiVM/devicesScsi.h"
 #include "antiVM/biosVendor.h"
 #include "antiVM/productName.h"
+#include "antiVM/systemVendor.h"
 
 #include "antiFake/browserHistory.h"
 #include "antiFake/upTime.h"

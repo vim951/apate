@@ -22,6 +22,7 @@ int main() {
     printResult("Looks for suspicious SCSI devices.", checkScsiDevices());
     printResult("Looks for suspicious bios vendor.", checkBiosVendor());
     printResult("Looks for suspicious product name.", checkProductName());
+    printResult("Looks for suspicious system vendors.", checkSysVendor());
     printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames());
     printResult("Checks the screen resolution.", checkDisplayResolution());
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
