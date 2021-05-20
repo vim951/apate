@@ -3,10 +3,13 @@
 
 #include "constants.h"
 
-//To read files
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
 
+int cp(const char *to, const char *from);
 int checkWordInFile(FILE* file, char* str);
 void readFileLine(char* filename, int lineNumber, char* buffer);
 

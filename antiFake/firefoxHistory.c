@@ -1,8 +1,5 @@
 #include "firefoxHistory.h"
 
-const int COUNT_OVER_LAST_X_DAYS    = 7;
-const int MIN_NB_DURING_LAST_X_DAYS = 1000;
-
 time_t olderFirefoxItem, now, x_days_ago;
 struct tm x_days_ago_tm;
 int countRecentFirefoxItems;

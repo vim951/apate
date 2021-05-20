@@ -27,6 +27,7 @@ add_executable(
         antiVM/ramSize.c antiVM/ramSize.h
         antiVM/loadedModulesFromLSMOD.c antiVM/loadedModulesFromLSMOD.h
 
-        antiFake/firefoxHistory.c antiFake/firefoxHistory.h)
+        antiFake/firefoxHistory.c antiFake/firefoxHistory.h
+        antiFake/chromeHistory.c antiFake/chromeHistory.h)
 
 target_link_libraries(apate LINK_PUBLIC sqlite3)

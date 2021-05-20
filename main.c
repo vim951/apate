@@ -24,6 +24,7 @@ int main() {
 
     printHeader("ANTI-FAKE");
     printResult("Inspect firefox history", checkFirefoxHistory());
+    printResult("Inspect chrome history", checkChromeHistory());
 
     return 0;
 }
