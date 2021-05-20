@@ -19,5 +19,6 @@
 #include "antiVM/loadedModulesFromLSMOD.h"
 
 #include "antiFake/browserHistory.h"
+#include "antiFake/upTime.h"
 
 #endif //APATE_MAIN_H

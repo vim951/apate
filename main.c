@@ -24,6 +24,7 @@ int main() {
 
     printHeader("ANTI-FAKE");
     printResult("Inspect browsers histories", checkBrowserHistory());
+    printResult("Checks that the system has been running for at least 30 minutes", checkUpTime());
 
     return 0;
 }
