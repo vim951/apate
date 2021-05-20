@@ -9,9 +9,9 @@ int checkBrowserHistory(){
     x_days_ago               = mktime(&x_days_ago_tm);
 
     //Checks histories one by one
-    int isChromeHistoryLegit = checkChromeHistory();
+    int isChromeHistoryLegit = checkChromeLikeHistory("google-chrome");
     int isFirefoxHistoryLegit = checkFirefoxHistory();
-    int isChromiumHistoryLegit = RESULT_FAILURE;
+    int isChromiumHistoryLegit = checkChromeLikeHistory("chromium");
 
     if (isChromeHistoryLegit==RESULT_SUCCESS || isFirefoxHistoryLegit==RESULT_SUCCESS || isChromiumHistoryLegit==RESULT_SUCCESS){
         return RESULT_SUCCESS;

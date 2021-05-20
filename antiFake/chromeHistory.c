@@ -36,7 +36,7 @@ int chromeSqlCallback(void *NotUsed, int argc, char **argv, char **azColName) {
  * Queries the history database of chrome, and verifies it is legitimate
  * @return If the history could not be read: RESULT_UNKNOWN, else if the history is legitimate: RESULT_SUCCESS, else: RESULT_FAILURE
  */
-int checkChromeHistory(){
+int checkChromeLikeHistory(char* name){
 
     //Initialize variables used to check if the history is legit or not
     olderChromeItem         = time(NULL);
@@ -49,12 +49,15 @@ int checkChromeHistory(){
     //Various char pointers to build paths
     char path1[256]    = "";
     const char* path2;
-    char path3[]       = "/.config/google-chrome/Default/History";
+    char path3[]       = "/.config/";
+    char path4[]       = "/Default/History";
 
     //Builds 'History' path
     path2 = getenv("HOME");
     strcat(path1, path2);
     strcat(path1, path3);
+    strcat(path1, name);
+    strcat(path1, path4);
 
     //If chrome is open, the database is locked, so it is safer to work on a copy
     //The random string is just to avoid any collision with other programs, as 'history' is a common word
