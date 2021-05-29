@@ -73,10 +73,12 @@ void surroundText(char* text, char placeholder){
 
 void printTitle(){
     printf("By Victor MASIAK");
-    setConsoleColor(BLUE);
-    printf("\n\n");
-    for (int i=0 ; i<11 ; i++){
-        surroundText(APATE[i], ' ');
+    if(!paramCompact){
+        setConsoleColor(BLUE);
+        printf("\n\n");
+        for (int i=0 ; i<11 ; i++){
+            surroundText(APATE[i], ' ');
+        }
     }
 }
 
