@@ -1,8 +1,10 @@
 #ifndef APATE_MAIN_H
 #define APATE_MAIN_H
 
-int paramVerbose = 0;
-int paramCompact = 0;
+
+extern int paramVerbose;
+extern int paramCompact;
+
 
 //======================================== EXTERNAL INCLUDES =========================================
 

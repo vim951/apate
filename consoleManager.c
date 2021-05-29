@@ -1,3 +1,6 @@
+//For parameters
+#include "main.h"
+
 //For constants
 #include "constants.h"
 
@@ -93,6 +96,10 @@ void printHeader(char* sectionName){
 }
 
 void printResult(char* testName, int result){
+
+    if(paramCompact && result == RESULT_SUCCESS){
+        return;
+    }
 
     int terminalWidth = getTerminalWidth();
     int nameLength = (int) strlen(testName);

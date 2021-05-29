@@ -1,9 +1,13 @@
 #include "main.h"
 
 
+int paramVerbose = 0;
+int paramCompact = 0;
+
+
 void parseParameters(int argc, char *argv[]){
     int opt;
-    while ((opt = getopt(argc, argv, "ilw")) != -1) {
+    while ((opt = getopt(argc, argv, "vc")) != -1) {
         switch (opt) {
             case 'v': paramVerbose = 1; break;
             case 'c': paramCompact = 1; break;
