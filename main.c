@@ -1,7 +1,23 @@
 #include "main.h"
-#include <stdio.h> //For testing purposes only
 
-int main() {
+
+void parseParameters(int argc, char *argv[]){
+    int opt;
+    while ((opt = getopt(argc, argv, "ilw")) != -1) {
+        switch (opt) {
+            case 'v': paramVerbose = 1; break;
+            case 'c': paramCompact = 1; break;
+            default:
+                fprintf(stderr, "Usage: %s [-vc]\n", argv[0]);
+                exit(EXIT_FAILURE);
+        }
+    }
+}
+
+
+int main(int argc, char *argv[]) {
+
+    parseParameters(argc, argv);
 
     printTitle();
 

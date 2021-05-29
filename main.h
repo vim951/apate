@@ -1,6 +1,15 @@
 #ifndef APATE_MAIN_H
 #define APATE_MAIN_H
 
+int paramVerbose = 0;
+int paramCompact = 0;
+
+//======================================== EXTERNAL INCLUDES =========================================
+
+#include <unistd.h> //Parameters parsing
+
+//======================================== INTERNAL INCLUDES =========================================
+
 #include "consoleManager.h"
 
 #include "debugmenot/debugmenot.h"
