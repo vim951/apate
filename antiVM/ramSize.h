@@ -1,6 +1,9 @@
 #ifndef APATE_RAMSIZE_H
 #define APATE_RAMSIZE_H
 
-int checkRamSize();
+#include <stdio.h>
+#include <string.h>
+
+int checkRamSize(char* resultDescriptionBuffer);
 
 #endif //APATE_RAMSIZE_H

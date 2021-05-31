@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
     printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Checks the screen resolution.", checkDisplayResolution(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace(resultDescriptionBuffer), resultDescriptionBuffer);
-    printResult("Checks if the system has at least 4GB of RAM.", checkRamSize(), resultDescriptionBuffer);
+    printResult("Checks if the system has at least 4GB of RAM.", checkRamSize(resultDescriptionBuffer), resultDescriptionBuffer);
 
     printHeader("ANTI-FAKE");
     printResult("Inspects browsers histories", checkBrowserHistory(), resultDescriptionBuffer);
