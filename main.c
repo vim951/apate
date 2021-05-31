@@ -23,35 +23,37 @@ int main(int argc, char *argv[]) {
 
     parseParameters(argc, argv);
 
+    char resultDescriptionBuffer[8192];
+
     printTitle();
 
     printHeader("ANTI-DEBUGGING");
     debugmenotInit();
-    printResult("Checks existence of LINES and COLUMNS environment variables.", test_env_detect());
-    printResult("Checks for breakpoint in _dl_debug_state.", test_ldhook_detect());
-    printResult("Compares beginning of the heap to address of own BSS.", test_nearheap_detect());
-    printResult("Checks base address of ELF and shared libraries for hard-coded values used by GDB.", test_noaslr_detect());
-    printResult("Checks whether parent's name is gdb, strace or ltrace.", test_parent_detect());
-    printResult("Tries to debug itself by calling ptrace.", test_ptrace_detect());
-    printResult("Measures distance of vdso and stack.", test_vdso_detect());
+    printResult("Checks existence of LINES and COLUMNS environment variables.", test_env_detect(), resultDescriptionBuffer);
+    printResult("Checks for breakpoint in _dl_debug_state.", test_ldhook_detect(), resultDescriptionBuffer);
+    printResult("Compares beginning of the heap to address of own BSS.", test_nearheap_detect(), resultDescriptionBuffer);
+    printResult("Checks base address of ELF and shared libraries for hard-coded values used by GDB.", test_noaslr_detect(), resultDescriptionBuffer);
+    printResult("Checks whether parent's name is gdb, strace or ltrace.", test_parent_detect(), resultDescriptionBuffer);
+    printResult("Tries to debug itself by calling ptrace.", test_ptrace_detect(), resultDescriptionBuffer);
+    printResult("Measures distance of vdso and stack.", test_vdso_detect(), resultDescriptionBuffer);
 
     printHeader("ANTI-VM");
-    printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag());
-    printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD());
-    printResult("Looks for suspicious MAC addresses.", checkMacAddresses());
-    printResult("Looks for suspicious SCSI devices.", checkScsiDevices());
-    printResult("Looks for suspicious bios vendor.", checkBiosVendor());
-    printResult("Looks for suspicious board vendor.", checkBoardVendor());
-    printResult("Looks for suspicious product name.", checkProductName());
-    printResult("Looks for suspicious system vendors.", checkSysVendor());
-    printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames());
-    printResult("Checks the screen resolution.", checkDisplayResolution());
-    printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace());
-    printResult("Checks if the system has at least 4GB of RAM.", checkRamSize());
+    printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag(), resultDescriptionBuffer);
+    printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD(), resultDescriptionBuffer);
+    printResult("Looks for suspicious MAC addresses.", checkMacAddresses(), resultDescriptionBuffer);
+    printResult("Looks for suspicious SCSI devices.", checkScsiDevices(), resultDescriptionBuffer);
+    printResult("Looks for suspicious bios vendor.", checkBiosVendor(), resultDescriptionBuffer);
+    printResult("Looks for suspicious board vendor.", checkBoardVendor(), resultDescriptionBuffer);
+    printResult("Looks for suspicious product name.", checkProductName(), resultDescriptionBuffer);
+    printResult("Looks for suspicious system vendors.", checkSysVendor(), resultDescriptionBuffer);
+    printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames(), resultDescriptionBuffer);
+    printResult("Checks the screen resolution.", checkDisplayResolution(), resultDescriptionBuffer);
+    printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace(), resultDescriptionBuffer);
+    printResult("Checks if the system has at least 4GB of RAM.", checkRamSize(), resultDescriptionBuffer);
 
     printHeader("ANTI-FAKE");
-    printResult("Inspects browsers histories", checkBrowserHistory());
-    printResult("Checks that the system has been running for at least 30 minutes", checkUpTime());
+    printResult("Inspects browsers histories", checkBrowserHistory(), resultDescriptionBuffer);
+    printResult("Checks that the system has been running for at least 30 minutes", checkUpTime(), resultDescriptionBuffer);
 
     return 0;
 }

@@ -97,7 +97,7 @@ void printHeader(char* sectionName){
     printf("\n");
 }
 
-void printResult(char* testName, int result){
+void printResult(char* testName, int result, char* resultDescription){
 
     if(paramCompact && result == RESULT_SUCCESS){
         return;
