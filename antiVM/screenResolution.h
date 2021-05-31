@@ -3,11 +3,12 @@
 
 #include <stdlib.h>
 #include <X11/Xlib.h>
+#include <string.h>
 
 #include "../constants.h"
 
 #define RESOLUTION_LIST_SIZE 9
 
-int checkDisplayResolution();
+int checkDisplayResolution(char* resultDescriptionBuffer);
 
 #endif //APATE_SCREENRESOLUTION_H

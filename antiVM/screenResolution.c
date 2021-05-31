@@ -23,13 +23,16 @@ const int RESOLUTION_LIST[RESOLUTION_LIST_SIZE][2] = {
         https://www.x.org/releases/X11R7.6/doc/libX11/specs/libX11/libX11.html
         http://surfingtroves.blogspot.com/2011/01/how-to-get-screen-resolution-in-linux-c.html
  */
-int checkDisplayResolution()
+int checkDisplayResolution(char* resultDescriptionBuffer)
 {
+    strcpy(resultDescriptionBuffer, "");
+
     Display *display;
     Window window;
     XWindowAttributes xw_attrs;
 
     if ((display = XOpenDisplay(NULL)) == NULL) {
+        strcat(resultDescriptionBuffer, "--> Could not get screen information via X11/Xlib.h\n");
         return RESULT_UNKNOWN;
     }
 
@@ -42,6 +45,7 @@ int checkDisplayResolution()
 
     XCloseDisplay(display);
 
+    strcat(resultDescriptionBuffer, "--> Your screen resolution (%d x %d) is not common (c.f. https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide).\n");
     for (int i=0 ; i<RESOLUTION_LIST_SIZE ; i++){
         if(RESOLUTION_LIST[i][0]==width && RESOLUTION_LIST[i][1]==height){
             return RESULT_SUCCESS;
