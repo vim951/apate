@@ -7,6 +7,6 @@
 #include "../files.h"      //To use checkWordInFile
 
 //Function headers
-int checkProductName();
+int checkProductName(char* resultDescriptionBuffer);
 
 #endif //APATE_PRODUCTNAME_H
