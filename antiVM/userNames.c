@@ -20,15 +20,24 @@ int checkUserNames(char* resultDescriptionBuffer)
     usrBin = opendir("/usr/bin");
     int result = RESULT_SUCCESS;
 
+    //Array used to avoid repetitions in the description
+    int userWasFound[SUSPICIOUS_USR_BIN_FILES_SIZE];
+    for(int i=0 ; i<SUSPICIOUS_USR_BIN_FILES_SIZE ; i++){
+        userWasFound[i] = 0;
+    }
+
     if (usrBin)
     {
         while ((dir = readdir(usrBin)) != NULL)
         {
             for (int i=0 ; i<SUSPICIOUS_USR_BIN_FILES_SIZE ; i++){
                 if((strstr(dir->d_name, SUSPICIOUS_USR_BIN_FILES[i])) != NULL) {
-                    strcat(resultDescriptionBuffer, "--> Found a VM specific name in /usr/bin: ");
-                    strcat(resultDescriptionBuffer, (char*) SUSPICIOUS_USR_BIN_FILES[i]);
-                    strcat(resultDescriptionBuffer, ".\n");
+                    if(!userWasFound[i]){
+                        strcat(resultDescriptionBuffer, "--> Found a VM specific name in /usr/bin: ");
+                        strcat(resultDescriptionBuffer, (char*) SUSPICIOUS_USR_BIN_FILES[i]);
+                        strcat(resultDescriptionBuffer, ".\n");
+                        userWasFound[i] = 1;
+                    }
                     result = RESULT_FAILURE;
                 }
             }
