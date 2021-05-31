@@ -7,6 +7,6 @@
 #include "../files.h"      //To use checkWordInFile
 
 //Function headers
-int checkBoardVendor();
+int checkBoardVendor(char* resultDescriptionBuffer);
 
 #endif //APATE_BOARDVENDOR_H

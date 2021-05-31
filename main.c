@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     printResult("Looks for suspicious MAC addresses.", checkMacAddresses(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Looks for suspicious SCSI devices.", checkScsiDevices(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Looks for suspicious bios vendor.", checkBiosVendor(resultDescriptionBuffer), resultDescriptionBuffer);
-    printResult("Looks for suspicious board vendor.", checkBoardVendor(), resultDescriptionBuffer);
+    printResult("Looks for suspicious board vendor.", checkBoardVendor(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Looks for suspicious product name.", checkProductName(), resultDescriptionBuffer);
     printResult("Looks for suspicious system vendors.", checkSysVendor(), resultDescriptionBuffer);
     printResult("Scans the content of '/usr/bin' for known VM names.", checkUserNames(), resultDescriptionBuffer);
