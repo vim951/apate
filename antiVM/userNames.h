@@ -7,6 +7,6 @@
 #include "../constants.h" //To use RESULT_X
 
 //Function headers
-int checkUserNames();
+int checkUserNames(char* resultDescriptionBuffer);
 
 #endif //APATE_USERNAMES_H
