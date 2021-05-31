@@ -22,7 +22,7 @@ int checkBiosVendor(char* resultDescriptionBuffer)
     int result = RESULT_SUCCESS;
 
     if (file == NULL) {
-        strcpy(resultDescriptionBuffer, "--> Could not read /sys/class/dmi/id/bios_vendor");
+        strcpy(resultDescriptionBuffer, "--> Could not read /sys/class/dmi/id/bios_vendor\n");
         return RESULT_UNKNOWN;
     } else {
         for(int i=0 ; i<SUSPICIOUS_BIOS_VENDORS_SIZE ; i++){
