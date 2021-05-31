@@ -34,13 +34,17 @@ void getMacAddressFromInterface(char *MAC_str, char* src)
 }
 
 //https://gist.github.com/edufelipe/6108057#file-is_wireless-c-L39
-int checkMacAddresses()
+int checkMacAddresses(char* resultDescriptionBuffer)
 {
+
+    strcpy(resultDescriptionBuffer, "");
 
     struct ifaddrs *ifaddr, *ifa;
     char mac[13];
+    int result = RESULT_SUCCESS;
 
     if (getifaddrs(&ifaddr) == -1) {
+        strcat(resultDescriptionBuffer, "--> Could not get any MAC address.\n");
         return RESULT_UNKNOWN;
     }
 
@@ -51,11 +55,14 @@ int checkMacAddresses()
         getMacAddressFromInterface(mac, ifa->ifa_name);
         for (int i=0 ; i<KNOWN_MAC_SIZE ; i++){
             if(startsWith(KNOWN_MAC[i], mac)){
-                return RESULT_FAILURE;
+                strcat(resultDescriptionBuffer, "--> Mac address starting with ");
+                strcat(resultDescriptionBuffer, (char*) KNOWN_MAC[i]);
+                strcat(resultDescriptionBuffer, " was found.\n");
+                result = RESULT_FAILURE;
             }
         }
     }
 
     freeifaddrs(ifaddr);
-    return RESULT_SUCCESS;
+    return result;
 }
