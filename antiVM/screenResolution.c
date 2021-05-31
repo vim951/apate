@@ -45,7 +45,15 @@ int checkDisplayResolution(char* resultDescriptionBuffer)
 
     XCloseDisplay(display);
 
-    strcat(resultDescriptionBuffer, "--> Your screen resolution (%d x %d) is not common (c.f. https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide).\n");
+    char tmp[10];
+    strcat(resultDescriptionBuffer, "--> Your screen resolution (");
+    snprintf(tmp, 10, "%d", width);
+    strcat(resultDescriptionBuffer, tmp);
+    strcat(resultDescriptionBuffer, " x ");
+    snprintf(tmp, 10, "%d", height);
+    strcat(resultDescriptionBuffer, tmp);
+    strcat(resultDescriptionBuffer, ") is not common (c.f. https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide).\n");
+
     for (int i=0 ; i<RESOLUTION_LIST_SIZE ; i++){
         if(RESOLUTION_LIST[i][0]==width && RESOLUTION_LIST[i][1]==height){
             return RESULT_SUCCESS;

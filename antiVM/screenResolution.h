@@ -2,6 +2,7 @@
 #define APATE_SCREENRESOLUTION_H
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <X11/Xlib.h>
 #include <string.h>
 
