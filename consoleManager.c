@@ -118,18 +118,22 @@ void printResult(char* testName, int result, char* resultDescription){
         case RESULT_SUCCESS:
             setConsoleColor(GREEN);
             printf("[ SUCCESS ]\n");
+            setConsoleColor(NO_COLOR);
             break;
         case RESULT_FAILURE:
             setConsoleColor(RED);
             printf("[ FAILURE ]\n");
+            setConsoleColor(NO_COLOR);
+            printf("%s", resultDescription);
             break;
         default:
             setConsoleColor(YELLOW);
             printf("[ UNKNOWN ]\n");
+            setConsoleColor(NO_COLOR);
+            printf("%s", resultDescription);
             break;
     }
 
-    setConsoleColor(NO_COLOR);
     for (int i=0 ; i<terminalWidth; i++){
         printf("-");
     }
