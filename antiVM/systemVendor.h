@@ -7,6 +7,6 @@
 #include "../files.h"      //To use checkWordInFile
 
 //Function headers
-int checkSysVendor();
+int checkSysVendor(char* resultDescriptionBuffer);
 
 #endif //APATE_SYSTEMVENDOR_H
