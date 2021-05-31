@@ -7,6 +7,6 @@
 #include "../files.h"      //To use checkWordInFile
 
 //Function headers
-int checkBiosVendor();
+int checkBiosVendor(char* resultDescriptionBuffer);
 
 #endif //APATE_BIOSVENDOR_H
