@@ -20,7 +20,7 @@ int checkScsiDevices(char* resultDescriptionBuffer)
     int result = RESULT_SUCCESS;
 
     if (file == NULL) {
-        strcat(resultDescriptionBuffer, "--> /proc/scsi/scsi\n");
+        strcat(resultDescriptionBuffer, "--> Could not read /proc/scsi/scsi\n");
         return RESULT_UNKNOWN;
     } else {
         for(int i=0 ; i<SUSPICIOUS_SCSI_DEVICES_SIZE ; i++){
