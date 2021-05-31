@@ -14,7 +14,7 @@ int checkFileSystemSpace(char* resultDescriptionBuffer){
     }
 
     char tmp[10];
-    strcat(resultDescriptionBuffer, "--> Your file system is very small (only ");
+    strcat(resultDescriptionBuffer, "--> File system is very small (only ");
     snprintf(tmp, 10, "%lu", (stat.f_bsize * stat.f_blocks / 1000000000));
     strcat(resultDescriptionBuffer, tmp);
     strcat(resultDescriptionBuffer, "GB).\n");
