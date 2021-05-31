@@ -5,6 +5,6 @@
 #ifndef APATE_HYPERVISORFLAG_H
 #define APATE_HYPERVISORFLAG_H
 
-int checkHypervisorFlag();
+int checkHypervisorFlag(char* resultDescriptionBuffer);
 
 #endif //APATE_HYPERVISORFLAG_H
