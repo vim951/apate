@@ -7,6 +7,6 @@
 #include "../files.h"      //To use checkWordInFile
 
 //Function headers
-int checkScsiDevices();
+int checkScsiDevices(char* resultDescriptionBuffer);
 
 #endif //APATE_DEVICESSCSI_H
