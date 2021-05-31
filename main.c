@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
     parseParameters(argc, argv);
 
     char resultDescriptionBuffer[8192];
+    strcpy(resultDescriptionBuffer, "");
 
     printTitle();
 
@@ -38,8 +39,8 @@ int main(int argc, char *argv[]) {
     printResult("Measures distance of vdso and stack.", test_vdso_detect(), resultDescriptionBuffer);
 
     printHeader("ANTI-VM");
-    printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag(), resultDescriptionBuffer);
-    printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD(), resultDescriptionBuffer);
+    printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Inspects currently loaded modules.", checkLoadedModulesFromLSMOD(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Looks for suspicious MAC addresses.", checkMacAddresses(), resultDescriptionBuffer);
     printResult("Looks for suspicious SCSI devices.", checkScsiDevices(), resultDescriptionBuffer);
     printResult("Looks for suspicious bios vendor.", checkBiosVendor(), resultDescriptionBuffer);

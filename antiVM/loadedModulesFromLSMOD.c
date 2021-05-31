@@ -15,19 +15,25 @@ const char* KNOWN_VM_MODULES[]   = {"Vboxsf ", "vboxguest ",                    
                                     };
 const int KNOWN_VM_MODULES_SIZE  = 14;
 
-int checkLoadedModulesFromLSMOD(){
+int checkLoadedModulesFromLSMOD(char* resultDescriptionBuffer){
+
+    strcpy(resultDescriptionBuffer, "");
 
     FILE* file;
     file = fopen("/proc/modules", "rb");
     int result, tmp;
 
     if (file == NULL) {
+        strcat(resultDescriptionBuffer, "--> Could not read /proc/modules\n");
         return RESULT_UNKNOWN;
     } else {
         result = RESULT_SUCCESS;
         for (int i=0 ; i<KNOWN_VM_MODULES_SIZE ; i++){
             tmp = checkWordInFile(file, (char*) KNOWN_VM_MODULES[i]);
             if(tmp==RESULT_FAILURE){
+                strcat(resultDescriptionBuffer, "--> Module ");
+                strcat(resultDescriptionBuffer, (char*) KNOWN_VM_MODULES[i]);
+                strcat(resultDescriptionBuffer, "is loaded.\n");
                 result = RESULT_FAILURE;
             }
         }

@@ -1,6 +1,6 @@
 #ifndef APATE_LOADEDMODULESFROMLSMOD_H
 #define APATE_LOADEDMODULESFROMLSMOD_H
 
-int checkLoadedModulesFromLSMOD();
+int checkLoadedModulesFromLSMOD(char* resultDescriptionBuffer);
 
 #endif //APATE_LOADEDMODULESFROMLSMOD_H
