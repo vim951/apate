@@ -16,30 +16,23 @@ int cp(const char *to, const char *from)
     if (fd_to < 0)
         goto out_error;
 
-    while (nread = read(fd_from, buf, sizeof buf), nread > 0)
-    {
+    while (nread = read(fd_from, buf, sizeof buf), nread > 0){
         char *out_ptr = buf;
         ssize_t nwritten;
 
-        do {
+        do{
             nwritten = write(fd_to, out_ptr, nread);
-
-            if (nwritten >= 0)
-            {
+            if (nwritten >= 0){
                 nread -= nwritten;
                 out_ptr += nwritten;
-            }
-            else if (errno != EINTR)
-            {
+            }else if (errno != EINTR){
                 goto out_error;
             }
-        } while (nread > 0);
+        }while(nread > 0);
     }
 
-    if (nread == 0)
-    {
-        if (close(fd_to) < 0)
-        {
+    if (nread == 0){
+        if (close(fd_to) < 0){
             fd_to = -1;
             goto out_error;
         }
