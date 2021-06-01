@@ -87,3 +87,18 @@ void readFileLine(char* filename, int lineNumber, char* buffer){
         fclose(file);
     }
 }
+
+int getLastModification(char* path, time_t* lastModification){
+
+    int file=0;
+    if((file=open(path,O_RDONLY)) < -1)
+        return 1;
+
+    struct stat fileStat;
+    if(fstat(file,&fileStat) < 0)
+        return 1;
+
+    *lastModification = fileStat.st_mtime;
+    return 0;
+
+}

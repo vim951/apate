@@ -38,5 +38,6 @@ extern int paramCompact;
 
 #include "antiFake/browserHistory.h"
 #include "antiFake/upTime.h"
+#include "antiVM/systemAge.h"
 
 #endif //APATE_MAIN_H
