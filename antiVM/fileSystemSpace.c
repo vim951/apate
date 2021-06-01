@@ -14,7 +14,7 @@ int checkFileSystemSpace(char* resultDescriptionBuffer){
     }
 
     char tmp[128];
-    snprintf(tmp, 128, "--> File system is only %luGB", (stat.f_bsize * stat.f_blocks / 1000000000));
+    snprintf(tmp, 128, "--> File system is only %luGB\n", (stat.f_bsize * stat.f_blocks / 1000000000));
     strcat(resultDescriptionBuffer, tmp);
 
     return (stat.f_bsize * stat.f_blocks / 1000000000)>=120 ? RESULT_SUCCESS : RESULT_FAILURE;

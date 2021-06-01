@@ -14,7 +14,7 @@ int checkRamSize(char* resultDescriptionBuffer)
     }
 
     char tmp[128];
-    snprintf(tmp, 128, "--> Memory is only %luGB", (info.totalram * info.mem_unit / 1000000000));
+    snprintf(tmp, 128, "--> Memory is only %luGB\n", (info.totalram * info.mem_unit / 1000000000));
     strcat(resultDescriptionBuffer, tmp);
 
     return (info.totalram * info.mem_unit / 1000000000) >= 4 ? RESULT_SUCCESS : RESULT_FAILURE;

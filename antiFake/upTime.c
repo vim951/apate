@@ -12,7 +12,7 @@ int checkUpTime(char* resultDescriptionBuffer){
     }
 
     char tmp[128];
-    snprintf(tmp, 128, "--> System has been running for %lumin", (info.uptime / 60));
+    snprintf(tmp, 128, "--> System has been running for %lumin\n", (info.uptime / 60));
     strcat(resultDescriptionBuffer, tmp);
 
     return (info.uptime / 60) < MIN_UPTIME_MINUTES ? RESULT_FAILURE : RESULT_SUCCESS;
