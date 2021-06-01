@@ -15,6 +15,6 @@
 char *strptime(const char *buf, const char *format, struct tm *tm);
 
 //Declares chromeHistory.c headers
-int checkChromeLikeHistory(char* access);
+int checkChromeLikeHistory(char* name, char* access, char* resultDescriptionBuffer);
 
 #endif //APATE_CHROMEHISTORY_H

@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
     printResult("Checks if the system has at least 4GB of RAM.", checkRamSize(resultDescriptionBuffer), resultDescriptionBuffer);
 
     printHeader("ANTI-FAKE");
-    printResult("Inspects browsers histories", checkBrowserHistory(), resultDescriptionBuffer);
+    printResult("Inspects browsers histories", checkBrowserHistory(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Checks that the system has been running for at least 30 minutes", checkUpTime(), resultDescriptionBuffer);
 
     return 0;

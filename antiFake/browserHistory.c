@@ -5,7 +5,9 @@
  * Queries the history database of firefox, chromium and chrome, and verifies if it is legitimate
  * @return If the history could not be read: RESULT_UNKNOWN, else if the history is legitimate: RESULT_SUCCESS, else: RESULT_FAILURE
  */
-int checkBrowserHistory(){
+int checkBrowserHistory(char* resultDescriptionBuffer){
+
+    strcpy(resultDescriptionBuffer, "");
 
     //Initialize variables used to check if the history is legit or not
     now                      = time(NULL);
@@ -15,9 +17,9 @@ int checkBrowserHistory(){
 
     //Checks histories one by one
     int results[] = {
-            checkFirefoxHistory(),
-            checkChromeLikeHistory("/snap/chromium/common/chromium"),
-            checkChromeLikeHistory("/.config/google-chrome")
+            checkFirefoxHistory(resultDescriptionBuffer),
+            checkChromeLikeHistory("Chromium", "/snap/chromium/common/chromium", resultDescriptionBuffer),
+            checkChromeLikeHistory("Chrome", "/.config/google-chrome", resultDescriptionBuffer)
     };
     int length = 3;
     int tmpResult = RESULT_FAILURE;

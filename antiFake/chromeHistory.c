@@ -36,7 +36,10 @@ int chromeSqlCallback(void *NotUsed, int argc, char **argv, char **azColName) {
  * Queries the history database of chrome, and verifies if it is legitimate
  * @return If the history could not be read: RESULT_UNKNOWN, else if the history is legitimate: RESULT_SUCCESS, else: RESULT_FAILURE
  */
-int checkChromeLikeHistory(char* access){
+int checkChromeLikeHistory(char* name, char* access, char* resultDescriptionBuffer){
+
+    //Buffer for verbose output
+    char tmp[2][128];
 
     //Initialize variables used to check if the history is legit or not
     olderChromeItem         = time(NULL);
@@ -67,6 +70,8 @@ int checkChromeLikeHistory(char* access){
 
     //If something went wrong
     if (rc != SQLITE_OK) {
+        snprintf(tmp[0], 128, "--> Could not read history from %s\n", path1);
+        strcat(resultDescriptionBuffer, tmp[0]);
         sqlite3_close(db);
         return RESULT_UNKNOWN;
     }
@@ -77,6 +82,8 @@ int checkChromeLikeHistory(char* access){
 
     //If something went wrong
     if (rc != SQLITE_OK) {
+        snprintf(tmp[0], 128, "--> Could not read history from %s\n", path1);
+        strcat(resultDescriptionBuffer, tmp[0]);
         sqlite3_free(err_msg);
         sqlite3_close(db);
         return RESULT_UNKNOWN;
@@ -88,5 +95,17 @@ int checkChromeLikeHistory(char* access){
     //Final check
     int isOldEnough    = difftime(x_days_ago, olderChromeItem) > 0;
     int isDenseEnough  = countRecentChromeItems > MIN_NB_DURING_LAST_X_DAYS;
+
+    //Fill the verbose description of the result
+    if(!isOldEnough){
+        strftime(tmp[1], 128, "%d-%m-%Y", localtime(&olderChromeItem));
+        snprintf(tmp[0], 128, "--> %s history is not old enough (older item is from %s).\n", name, tmp[1]);
+        strcat(resultDescriptionBuffer, tmp[0]);
+    }
+    if(!isDenseEnough){
+        snprintf(tmp[0], 128, "--> %s recent history only contains %d items.\n", name, countRecentChromeItems);
+        strcat(resultDescriptionBuffer, tmp[0]);
+    }
+
     return (isOldEnough && isDenseEnough) ? RESULT_SUCCESS : RESULT_FAILURE;
 }

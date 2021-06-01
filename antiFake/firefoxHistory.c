@@ -49,7 +49,10 @@ int firefoxSqlCallback(void *NotUsed, int argc, char **argv, char **azColName) {
  * Queries the history database of firefox, and verifies if it is legitimate
  * @return If the history could not be read: RESULT_UNKNOWN, else if the history is legitimate: RESULT_SUCCESS, else: RESULT_FAILURE
  */
-int checkFirefoxHistory(){
+int checkFirefoxHistory(char* resultDescriptionBuffer){
+
+    //Buffer for verbose output
+    char tmp[2][128];
 
     //Initialize variables used to check if the history is legit or not
     olderFirefoxItem         = time(NULL);
@@ -86,6 +89,8 @@ int checkFirefoxHistory(){
 
     //If something went wrong
     if (rc != SQLITE_OK) {
+        snprintf(tmp[0], 128, "--> Could not read history from %s\n", path1);
+        strcat(resultDescriptionBuffer, tmp[0]);
         sqlite3_close(db);
         return RESULT_UNKNOWN;
     }
@@ -96,6 +101,8 @@ int checkFirefoxHistory(){
 
     //If something went wrong
     if (rc != SQLITE_OK) {
+        snprintf(tmp[0], 128, "--> Could not read history from %s\n", path1);
+        strcat(resultDescriptionBuffer, tmp[0]);
         sqlite3_free(err_msg);
         sqlite3_close(db);
         return RESULT_UNKNOWN;
@@ -107,5 +114,17 @@ int checkFirefoxHistory(){
     //Final check
     int isOldEnough    = difftime(x_days_ago, olderFirefoxItem) > 0;
     int isDenseEnough  = countRecentFirefoxItems > MIN_NB_DURING_LAST_X_DAYS;
+
+    //Fill the verbose description of the result
+    if(!isOldEnough){
+        strftime(tmp[1], 128, "%d-%m-%Y", localtime(&olderFirefoxItem));
+        snprintf(tmp[0], 128, "--> Firefox history is not old enough (older item is from %s).\n", tmp[1]);
+        strcat(resultDescriptionBuffer, tmp[0]);
+    }
+    if(!isDenseEnough){
+        snprintf(tmp[0], 128, "--> Firefox recent history only contains %d items.\n", countRecentFirefoxItems);
+        strcat(resultDescriptionBuffer, tmp[0]);
+    }
+
     return (isOldEnough && isDenseEnough) ? RESULT_SUCCESS : RESULT_FAILURE;
 }

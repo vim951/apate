@@ -15,6 +15,6 @@
 char *strptime(const char *buf, const char *format, struct tm *tm);
 
 //Declares firefoxHistory.c headers
-int checkFirefoxHistory();
+int checkFirefoxHistory(char* resultDescriptionBuffer);
 
 #endif //APATE_FIREFOXHISTORY_H
