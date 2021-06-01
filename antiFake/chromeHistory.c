@@ -60,13 +60,16 @@ int checkChromeLikeHistory(char* name, char* access, char* resultDescriptionBuff
     strcat(path1, access);
     strcat(path1, path3);
 
+    /* DOES NOT SOLVE THE PROBLEM
+     * TODO: find a solution to read the history when a window is open
     //If chrome is open, the database is locked, so it is safer to work on a copy
     //The random string is just to avoid any collision with other programs, as 'history' is a common word
     char cpPath[] = "/tmp/History_n0jxYiru0t";
     cp(cpPath, path1);
+     */
 
     //Open a connection to the copy of 'History'
-    int rc = sqlite3_open(cpPath, &db);
+    int rc = sqlite3_open(path1, &db);
 
     //If something went wrong
     if (rc != SQLITE_OK) {
@@ -77,7 +80,7 @@ int checkChromeLikeHistory(char* name, char* access, char* resultDescriptionBuff
     }
 
     //SQL query
-    char *sql = "SELECT datetime(visit_time / 1000000 + (strftime('%s', '1601-01-01')), 'unixepoch', 'localtime') FROM visits;";
+    char *sql = "SELECT datetime(visit_time / 1000000 + (strftime('%s', '1601-01-01')), 'unixepoch', 'localtime') AS visit_date FROM visits ORDER BY visit_date ASC;";
     rc = sqlite3_exec(db, sql, chromeSqlCallback, 0, &err_msg);
 
     //If something went wrong
