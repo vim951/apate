@@ -124,13 +124,15 @@ void printResult(char* testName, int result, char* resultDescription){
             setConsoleColor(RED);
             printf("[ FAILURE ]\n");
             setConsoleColor(NO_COLOR);
-            printf("%s", resultDescription);
+            if(paramVerbose)
+                printf("%s", resultDescription);
             break;
         default:
             setConsoleColor(YELLOW);
             printf("[ UNKNOWN ]\n");
             setConsoleColor(NO_COLOR);
-            printf("%s", resultDescription);
+            if(paramVerbose)
+                printf("%s", resultDescription);
             break;
     }
 
