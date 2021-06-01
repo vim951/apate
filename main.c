@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 
     printHeader("ANTI-FAKE");
     printResult("Inspects browsers histories", checkBrowserHistory(resultDescriptionBuffer), resultDescriptionBuffer);
-    printResult("Checks that the system has been running for at least 30 minutes", checkUpTime(), resultDescriptionBuffer);
+    printResult("Checks that the system has been running for at least 30 minutes", checkUpTime(resultDescriptionBuffer), resultDescriptionBuffer);
 
     return 0;
 }
