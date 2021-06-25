@@ -56,15 +56,18 @@ int test_noaslr_detect(char* resultDescriptionBuffer)
     struct utsname utsname;
 
     if (!elf || !ld) {
+        strcat(resultDescriptionBuffer, "--> ERROR: !elf || !ld\n");
         return RESULT_UNKNOWN;
     }
 
     if (!(aslr_active() == RESULT_FAILURE)) {
         /* No ASLR on this machine. Unknown result */
+        strcat(resultDescriptionBuffer, "--> No ASLR on this machine. Unknown result.\n");
         return RESULT_UNKNOWN;
     }
 
     if (uname(&utsname) == -1) {
+        strcat(resultDescriptionBuffer, "--> ERROR: uname(&utsname) == -1\n");
         return RESULT_UNKNOWN;
     }
 
@@ -72,23 +75,29 @@ int test_noaslr_detect(char* resultDescriptionBuffer)
         case ARCH_AMD64:
         case ARCH_ARM64:
             if (((elf & elf_mask[this_arch]) == elf_bits[this_arch]) &&
-                ((ld & lib_mask[this_arch]) == lib_bits[this_arch]))
+                ((ld & lib_mask[this_arch]) == lib_bits[this_arch])){
+                strcat(resultDescriptionBuffer, "--> (elf & elf_mask[this_arch]) == elf_bits[this_arch]) && ((ld & lib_mask[this_arch]) == lib_bits[this_arch])\n");
                 return RESULT_FAILURE;
+            }
             return RESULT_SUCCESS;
 
         case ARCH_I386:
             if (!strcmp(utsname.machine, arch_strings[ARCH_AMD64])) {
                 /* 32 bit binary running on 64 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits[this_arch]) &&
-                    ((ld & lib_mask[this_arch]) == lib_bits[this_arch]))
+                    ((ld & lib_mask[this_arch]) == lib_bits[this_arch])){
+                    strcat(resultDescriptionBuffer, "--> (elf & elf_mask[this_arch]) == elf_bits[this_arch]) && ((ld & lib_mask[this_arch]) == lib_bits[this_arch])\n");
                     return RESULT_FAILURE;
+                }
                 return RESULT_SUCCESS;
 
             } else {
                 /* 32 bit binary running on 32 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits_native[this_arch]) &&
-                    ((ld & lib_mask[this_arch]) == lib_bits_native[this_arch]))
+                    ((ld & lib_mask[this_arch]) == lib_bits_native[this_arch])){
+                    strcat(resultDescriptionBuffer, "--> (elf & elf_mask[this_arch]) == elf_bits[this_arch]) && ((ld & lib_mask[this_arch]) == lib_bits[this_arch])\n");
                     return RESULT_FAILURE;
+                }
                 return RESULT_SUCCESS;
 
             }
@@ -97,19 +106,24 @@ int test_noaslr_detect(char* resultDescriptionBuffer)
             if (!strcmp(utsname.machine, arch_strings[ARCH_ARM64])) {
                 /* 32 bit binary running on 64 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits[this_arch]) &&
-                    ((ld & lib_mask[this_arch]) == lib_bits[this_arch]))
+                    ((ld & lib_mask[this_arch]) == lib_bits[this_arch])){
+                    strcat(resultDescriptionBuffer, "--> (elf & elf_mask[this_arch]) == elf_bits[this_arch]) && ((ld & lib_mask[this_arch]) == lib_bits[this_arch])\n");
                     return RESULT_FAILURE;
+                }
                 return RESULT_SUCCESS;
 
             } else {
                 /* 32 bit binary running on 32 bit kernel */
                 if (((elf & elf_mask[this_arch]) == elf_bits_native[this_arch]) &&
-                    ((ld & lib_mask[this_arch]) == lib_bits_native[this_arch]))
+                    ((ld & lib_mask[this_arch]) == lib_bits_native[this_arch])){
+                    strcat(resultDescriptionBuffer, "--> (elf & elf_mask[this_arch]) == elf_bits[this_arch]) && ((ld & lib_mask[this_arch]) == lib_bits[this_arch])\n");
                     return RESULT_FAILURE;
+                }
                 return RESULT_SUCCESS;
 
             }
         default:
+            strcat(resultDescriptionBuffer, "--> Unknown architecture.\n");
             return RESULT_UNKNOWN;
     }
 }
