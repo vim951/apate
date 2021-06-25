@@ -1,5 +1,7 @@
 # apate
 
+Note: a pre-compiled binary (on Ubuntu 20.04.2 LTS) is available in the release section ([direct download](https://github.com/vim951/apate/releases/download/v1.0/apate)).
+
 ## Use case
 
 Apate is a linux software that performs various anti-debugging, anti-VM, and anti-sandbox tricks, to help you improve your setup, and stay under the radar.
