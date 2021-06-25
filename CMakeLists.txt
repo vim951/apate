@@ -35,10 +35,10 @@ add_executable(
         antiVM/boardVendor.c antiVM/boardVendor.h
         antiVM/systemAge.c antiVM/systemAge.h
 
-        antiFake/firefoxHistory.c antiFake/firefoxHistory.h
-        antiFake/chromeHistory.c antiFake/chromeHistory.h
-        antiFake/browserHistory.c antiFake/browserHistory.h
-        antiFake/upTime.c antiFake/upTime.h
+        antiSandbox/firefoxHistory.c antiSandbox/firefoxHistory.h
+        antiSandbox/chromeHistory.c antiSandbox/chromeHistory.h
+        antiSandbox/browserHistory.c antiSandbox/browserHistory.h
+        antiSandbox/upTime.c antiSandbox/upTime.h
 
 )
 

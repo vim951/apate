@@ -7,10 +7,16 @@ int paramCompact = 0;
 
 void parseParameters(int argc, char *argv[]){
     int opt;
-    while ((opt = getopt(argc, argv, "vc")) != -1) {
+    while ((opt = getopt(argc, argv, "hvc")) != -1) {
         switch (opt) {
             case 'v': paramVerbose = 1; break;
             case 'c': paramCompact = 1; break;
+            case 'h':
+                printf("apate understands two parameters:\n");
+                printf("-c (for compact): only display test that have failed.\n");
+                printf("-v (for verbose): print details when a test fails.\n");
+                printf("Those two parameters can be combined.\n");
+                exit(0);
             default:
                 fprintf(stderr, "Usage: %s [-vc]\n", argv[0]);
                 exit(EXIT_FAILURE);
@@ -52,7 +58,7 @@ int main(int argc, char *argv[]) {
     printResult("Checks if the file system is bigger than 120GB.", checkFileSystemSpace(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Checks if the system has at least 4GB of RAM.", checkRamSize(resultDescriptionBuffer), resultDescriptionBuffer);
 
-    printHeader("ANTI-FAKE");
+    printHeader("ANTI-SANDBOX");
     printResult("Inspects browsers histories", checkBrowserHistory(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Checks that the system has been running for at least 30 minutes", checkUpTime(resultDescriptionBuffer), resultDescriptionBuffer);
     printResult("Checks the coherence of system age", checkSystemAgeCoherence(resultDescriptionBuffer), resultDescriptionBuffer);

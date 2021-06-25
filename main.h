@@ -35,9 +35,9 @@ extern int paramCompact;
 #include "antiVM/productName.h"
 #include "antiVM/systemVendor.h"
 #include "antiVM/boardVendor.h"
-
-#include "antiFake/browserHistory.h"
-#include "antiFake/upTime.h"
 #include "antiVM/systemAge.h"
+
+#include "antiSandbox/browserHistory.h"
+#include "antiSandbox/upTime.h"
 
 #endif //APATE_MAIN_H
