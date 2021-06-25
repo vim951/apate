@@ -4,6 +4,9 @@
 
 int test_parent_detect(char* resultDescriptionBuffer)
 {
+
+    strcpy(resultDescriptionBuffer, "");
+
     char link_name[0x100] = { 0 };
     size_t target_max_len = 0x100;
     ssize_t target_real_len = 0;

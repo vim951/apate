@@ -46,6 +46,7 @@ static const unsigned long long lib_mask[] = {
 
 int test_noaslr_detect(char* resultDescriptionBuffer)
 {
+    strcpy(resultDescriptionBuffer, "");
 
     /* Program headers are close enough to the beginning of the ELF to be
      * representative for the ELF's base address. We use ld_base because it's

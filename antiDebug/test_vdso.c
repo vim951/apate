@@ -4,6 +4,8 @@
 
 int test_vdso_detect(char* resultDescriptionBuffer)
 {
+    strcpy(resultDescriptionBuffer, "");
+
     unsigned long tos;
     unsigned long vdso = getauxval(AT_SYSINFO_EHDR);
 

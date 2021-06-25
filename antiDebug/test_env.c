@@ -4,6 +4,8 @@
 
 char test_env_detect(char* resultDescriptionBuffer)
 {
+    strcpy(resultDescriptionBuffer, "");
+
     if (getenv("LINES") || getenv("COLUMNS"))
         return RESULT_FAILURE; /* Debatable */
     else

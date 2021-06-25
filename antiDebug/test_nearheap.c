@@ -4,6 +4,8 @@
 
 int test_nearheap_detect(char* resultDescriptionBuffer)
 {
+    strcpy(resultDescriptionBuffer, "");
+
     /* GDB relocates the heap to the end of the bss section */
     static unsigned char bss;
     unsigned char *probe = malloc(0x10);
