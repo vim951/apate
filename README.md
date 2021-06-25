@@ -4,6 +4,12 @@
 
 Apate is a linux software that performs various anti-debugging, anti-VM, and anti- "fake" (i.e. a computer only used for analysis), to help you improve your setup, and stay under the radar.
 
+For example, here is the output when apate is attached to gdb:
+![Screenshot using gdb](https://firebasestorage.googleapis.com/v0/b/publicsurls.appspot.com/o/Screenshot%20-%20gdb.png?alt=media&token=cfe7de43-60ef-4b39-98c9-863951274359)
+
+And here is the output when apate is running inside a fresh VM:
+![Screenshot in a VM](https://firebasestorage.googleapis.com/v0/b/publicsurls.appspot.com/o/Screenshot%20-%20VM.png?alt=media&token=1cc8f523-5087-430f-ad82-2ccae8c9fd72)
+
 ## Options
 
 There are two options that you can specify, to tune the output of apate:
