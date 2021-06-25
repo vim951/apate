@@ -1,7 +1,5 @@
 # apate
 
-Note: a pre-compiled binary (on Ubuntu 20.04.2 LTS) is available in the release section ([direct download](https://github.com/vim951/apate/releases/download/v1.0/apate)). Otherwise, a `CMakeLists.txt` file is included in the repository.
-
 ## Use case
 
 Apate is a linux software that performs various anti-debugging, anti-VM, and anti-sandbox tricks, to help you improve your setup, and stay under the radar.
@@ -11,6 +9,11 @@ For example, here is the output when apate is attached to gdb:
 
 And here is the output when apate is running inside a fresh VM:
 ![Screenshot in a VM](https://firebasestorage.googleapis.com/v0/b/publicsurls.appspot.com/o/Screenshot%20-%20VM.png?alt=media&token=1cc8f523-5087-430f-ad82-2ccae8c9fd72)
+
+## Compilation
+
+* A pre-compiled binary (on Ubuntu 20.04.2 LTS) is available in the release section ([direct download](https://github.com/vim951/apate/releases/download/v1.0/apate))
+* Otherwise, a `CMakeLists.txt` and a `Makefile` file are included in the repository.
 
 ## Options
 
