@@ -7,6 +7,7 @@ int test_ptrace_detect(char* resultDescriptionBuffer)
     strcpy(resultDescriptionBuffer, "");
 
     if (ptrace(PTRACE_TRACEME, 0, NULL, NULL) == -1) {
+        strcat(resultDescriptionBuffer, "--> ptrace call failed.\n");
         return RESULT_FAILURE;
     }
 
