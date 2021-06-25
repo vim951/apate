@@ -46,3 +46,5 @@ Credits: those tests are from [debugmenot](https://github.com/kirschju/debugmeno
 * Inspects browsers histories
 * Checks that the system has been running for at least 30 minutes
 * Checks the coherence of system age
+
+Note: all chrome/chromium windows must be closed for history inspection (otherwise the database is locked). This is not necessary for firefox windows.
