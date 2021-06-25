@@ -32,14 +32,22 @@ int test_parent_detect(char* resultDescriptionBuffer)
         memset(link_target, '\x00', target_max_len);
     }
 
-    if (!strcmp(basename(link_target), "gdb"))
+    if (!strcmp(basename(link_target), "gdb")){
+        strcat(resultDescriptionBuffer, "--> Found gdb.\n");
         res = RESULT_FAILURE;
-    if (strstr(link_target, "lldb"))
+    }
+    if (strstr(link_target, "lldb")) {
+        strcat(resultDescriptionBuffer, "--> Found lldb.\n");
         res = RESULT_FAILURE;
-    if (!strcmp(basename(link_target), "strace"))
+    }
+    if (!strcmp(basename(link_target), "strace")) {
+        strcat(resultDescriptionBuffer, "--> Found strace.\n");
         res = RESULT_FAILURE;
-    if (!strcmp(basename(link_target), "ltrace"))
+    }
+    if (!strcmp(basename(link_target), "ltrace")) {
+        strcat(resultDescriptionBuffer, "--> Found ltrace.\n");
         res = RESULT_FAILURE;
+    }
 
     free(link_target);
     return res;
