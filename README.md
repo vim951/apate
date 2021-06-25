@@ -13,7 +13,7 @@ And here is the output when apate is running inside a fresh VM:
 ## Compilation
 
 * A pre-compiled binary (on Ubuntu 20.04.2 LTS) is available in the release section ([direct download](https://github.com/vim951/apate/releases/download/v1.0/apate))
-* Otherwise, a `CMakeLists.txt` and a `Makefile` file are included in the repository.
+* Otherwise, a `CMakeLists.txt` file is included in the repository. You can rebuild the project by doing `cmake .` and then `make` inside the project directory.
 
 ## Options
 
