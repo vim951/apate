@@ -1,6 +1,6 @@
 # apate
 
-Note: a pre-compiled binary (on Ubuntu 20.04.2 LTS) is available in the release section ([direct download](https://github.com/vim951/apate/releases/download/v1.0/apate)). Otherwise, a `CMakeLists.txt` is included in the repository.
+Note: a pre-compiled binary (on Ubuntu 20.04.2 LTS) is available in the release section ([direct download](https://github.com/vim951/apate/releases/download/v1.0/apate)). Otherwise, a `CMakeLists.txt` file is included in the repository.
 
 ## Use case
 
