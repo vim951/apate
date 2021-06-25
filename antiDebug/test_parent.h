@@ -1,13 +1,16 @@
 #ifndef _TEST_PARENT_H
 #define _TEST_PARENT_H
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <libgen.h>
+
+#include "../constants.h"
 #include "debugmenot.h"
 
 int test_parent_detect();
-int register_test_parent(struct test_chain *, unsigned int);
-
-#define TEST_ID_PARENT   4
-#define TEST_NAME_PARENT "parent"
-#define TEST_DESC_PARENT "Application checks whether parent's name is gdb, strace or ltrace."
 
 #endif

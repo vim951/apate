@@ -1,11 +1,5 @@
 #define _DEFAULT_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/auxv.h>
-#include <string.h>
 
-#include "../constants.h"
-#include "debugmenot.h"
 #include "test_vdso.h"
 
 int test_vdso_detect()

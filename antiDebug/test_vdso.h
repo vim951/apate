@@ -1,13 +1,14 @@
 #ifndef _TEST_ENV_H
 #define _TEST_ENV_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/auxv.h>
+#include <string.h>
+
+#include "../constants.h"
 #include "debugmenot.h"
 
 int test_vdso_detect();
-int register_test_vdso(struct test_chain *, unsigned int);
-
-#define TEST_ID_VDSO   2
-#define TEST_NAME_VDSO "vdso"
-#define TEST_DESC_VDSO "Application measures distance of vdso and stack."
 
 #endif

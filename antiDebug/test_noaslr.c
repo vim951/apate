@@ -1,12 +1,5 @@
 #define _DEFAULT_SOURCE
-#include <stdio.h>
-#include <sys/auxv.h>
-#include <sys/utsname.h>
-#include <unistd.h>
-#include <string.h>
 
-#include "../constants.h"
-#include "debugmenot.h"
 #include "test_noaslr.h"
 
 /* 64 or 32 bit ELF running on a 64 bit kernel */

@@ -1,9 +1,5 @@
 #define _DEFAULT_SOURCE
-#include <stdio.h>
-#include <sys/ptrace.h>
 
-#include "../constants.h"
-#include "debugmenot.h"
 #include "test_ptrace.h"
 
 int test_ptrace_detect()

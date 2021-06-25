@@ -1,13 +1,5 @@
 #define _DEFAULT_SOURCE
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <libgen.h>
 
-#include "../constants.h"
-#include "debugmenot.h"
 #include "test_parent.h"
 
 int test_parent_detect()

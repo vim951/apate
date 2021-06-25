@@ -1,6 +1,13 @@
 #ifndef _GDB_DETECT_H
 #define _GDB_DETECT_H
 
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
+#include <sys/auxv.h>
+
+#include "../constants.h"
+
 int debugmenotInit();
 
 #define DEBUG

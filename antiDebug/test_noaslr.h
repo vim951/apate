@@ -1,13 +1,15 @@
 #ifndef _TEST_NOASLR_H
 #define _TEST_NOASLR_H
 
+#include <stdio.h>
+#include <sys/auxv.h>
+#include <sys/utsname.h>
+#include <unistd.h>
+#include <string.h>
+
+#include "../constants.h"
 #include "debugmenot.h"
 
 int test_noaslr_detect();
-int register_test_noaslr(struct test_chain *, unsigned int);
-
-#define TEST_ID_NOASLR   3
-#define TEST_NAME_NOASLR "noaslr"
-#define TEST_DESC_NOASLR "Application checks base address of ELF and shared libraries for hard-coded values used by GDB."
 
 #endif

@@ -2,12 +2,9 @@
 #define _TEST_VDSO_H
 
 #include "debugmenot.h"
+#include <stdlib.h>
+#include "../constants.h"
 
 char test_env_detect();
-int register_test_env(struct test_chain *, unsigned int);
-
-#define TEST_ID_ENV   0
-#define TEST_NAME_ENV "env"
-#define TEST_DESC_ENV "Application checks existence of LINES and COLUMNS environment variables."
 
 #endif
