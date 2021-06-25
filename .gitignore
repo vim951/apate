@@ -1,4 +1,2 @@
 # Project exclude paths
 /cmake-build-debug/
-/cmake_install.cmake
-/CMakeCache.txt
