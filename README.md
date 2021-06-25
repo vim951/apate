@@ -20,7 +20,7 @@ Those two parameters can be combined.
 * Checks for breakpoint in _dl_debug_state.
 * Compares beginning of the heap to address of own BSS.
 * Checks base address of ELF and shared libraries for hard-coded values used by GDB.
-* Checks whether parent's name is gdb, strace or ltrace.
+* Checks if parent's name is gdb, lldb, strace or ltrace.
 * Tries to debug itself by calling ptrace.
 * Measures distance of vdso and stack.
 
