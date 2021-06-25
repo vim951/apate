@@ -2,7 +2,7 @@
 
 #include "test_vdso.h"
 
-int test_vdso_detect()
+int test_vdso_detect(char* resultDescriptionBuffer)
 {
     unsigned long tos;
     unsigned long vdso = getauxval(AT_SYSINFO_EHDR);

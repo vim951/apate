@@ -36,13 +36,13 @@ int main(int argc, char *argv[]) {
 
     printHeader("ANTI-DEBUGGING");
     debugmenotInit();
-    printResult("Checks existence of LINES and COLUMNS environment variables.", test_env_detect(), resultDescriptionBuffer);
-    printResult("Checks for breakpoint in _dl_debug_state.", test_ldhook_detect(), resultDescriptionBuffer);
-    printResult("Compares beginning of the heap to address of own BSS.", test_nearheap_detect(), resultDescriptionBuffer);
-    printResult("Checks base address of ELF and shared libraries for hard-coded values used by GDB.", test_noaslr_detect(), resultDescriptionBuffer);
-    printResult("Checks whether parent's name is gdb, strace or ltrace.", test_parent_detect(), resultDescriptionBuffer);
-    printResult("Tries to debug itself by calling ptrace.", test_ptrace_detect(), resultDescriptionBuffer);
-    printResult("Measures distance of vdso and stack.", test_vdso_detect(), resultDescriptionBuffer);
+    printResult("Checks existence of LINES and COLUMNS environment variables.", test_env_detect(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Checks for breakpoint in _dl_debug_state.", test_ldhook_detect(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Compares beginning of the heap to address of own BSS.", test_nearheap_detect(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Checks base address of ELF and shared libraries for hard-coded values used by GDB.", test_noaslr_detect(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Checks whether parent's name is gdb, strace or ltrace.", test_parent_detect(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Tries to debug itself by calling ptrace.", test_ptrace_detect(resultDescriptionBuffer), resultDescriptionBuffer);
+    printResult("Measures distance of vdso and stack.", test_vdso_detect(resultDescriptionBuffer), resultDescriptionBuffer);
 
     printHeader("ANTI-VM");
     printResult("Looks for the hypervisor flag in 'cpuinfo'.", checkHypervisorFlag(resultDescriptionBuffer), resultDescriptionBuffer);

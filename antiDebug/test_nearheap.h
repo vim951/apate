@@ -8,6 +8,6 @@
 #include "../constants.h"
 #include "debugmenot.h"
 
-int test_nearheap_detect(void);
+int test_nearheap_detect(char* resultDescriptionBuffer);
 
 #endif

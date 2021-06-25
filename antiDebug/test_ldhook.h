@@ -5,6 +5,6 @@
 #include "../constants.h"
 #include "debugmenot.h"
 
-int test_ldhook_detect(void);
+int test_ldhook_detect(char* resultDescriptionBuffer);
 
 #endif

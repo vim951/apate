@@ -2,7 +2,7 @@
 
 #include "test_nearheap.h"
 
-int test_nearheap_detect(void)
+int test_nearheap_detect(char* resultDescriptionBuffer)
 {
     /* GDB relocates the heap to the end of the bss section */
     static unsigned char bss;

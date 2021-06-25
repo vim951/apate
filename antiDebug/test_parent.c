@@ -2,7 +2,7 @@
 
 #include "test_parent.h"
 
-int test_parent_detect()
+int test_parent_detect(char* resultDescriptionBuffer)
 {
     char link_name[0x100] = { 0 };
     size_t target_max_len = 0x100;

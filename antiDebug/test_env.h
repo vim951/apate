@@ -5,6 +5,6 @@
 #include <stdlib.h>
 #include "../constants.h"
 
-char test_env_detect();
+char test_env_detect(char* resultDescriptionBuffer);
 
 #endif

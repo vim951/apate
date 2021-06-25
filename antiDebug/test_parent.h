@@ -11,6 +11,6 @@
 #include "../constants.h"
 #include "debugmenot.h"
 
-int test_parent_detect();
+int test_parent_detect(char* resultDescriptionBuffer);
 
 #endif

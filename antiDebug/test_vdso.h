@@ -9,6 +9,6 @@
 #include "../constants.h"
 #include "debugmenot.h"
 
-int test_vdso_detect();
+int test_vdso_detect(char* resultDescriptionBuffer);
 
 #endif

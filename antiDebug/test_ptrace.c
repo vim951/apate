@@ -2,7 +2,7 @@
 
 #include "test_ptrace.h"
 
-int test_ptrace_detect()
+int test_ptrace_detect(char* resultDescriptionBuffer)
 {
     if (ptrace(PTRACE_TRACEME, 0, NULL, NULL) == -1) {
         return RESULT_FAILURE;

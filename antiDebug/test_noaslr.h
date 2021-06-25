@@ -10,6 +10,6 @@
 #include "../constants.h"
 #include "debugmenot.h"
 
-int test_noaslr_detect();
+int test_noaslr_detect(char* resultDescriptionBuffer);
 
 #endif

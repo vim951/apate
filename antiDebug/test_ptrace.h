@@ -7,6 +7,6 @@
 #include "../constants.h"
 #include "debugmenot.h"
 
-int test_ptrace_detect();
+int test_ptrace_detect(char* resultDescriptionBuffer);
 
 #endif

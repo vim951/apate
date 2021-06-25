@@ -44,7 +44,7 @@ static const unsigned long long lib_mask[] = {
     [ARCH_ARMV7] = 0x00000000fff00000ULL,
 };
 
-int test_noaslr_detect()
+int test_noaslr_detect(char* resultDescriptionBuffer)
 {
 
     /* Program headers are close enough to the beginning of the ELF to be
