@@ -2,7 +2,7 @@
 
 ## Use case
 
-Apate is a linux software that performs various anti-debugging, anti-VM, and anti- "fake" (i.e. a computer only used for analysis), to help you improve your setup, and stay under the radar.
+Apate is a linux software that performs various anti-debugging, anti-VM, and anti-sandbox tricks, to help you improve your setup, and stay under the radar.
 
 For example, here is the output when apate is attached to gdb:
 ![Screenshot using gdb](https://firebasestorage.googleapis.com/v0/b/publicsurls.appspot.com/o/Screenshot%20-%20gdb.png?alt=media&token=cfe7de43-60ef-4b39-98c9-863951274359)
@@ -18,6 +18,8 @@ There are two options that you can specify, to tune the output of apate:
 
 Those two parameters can be combined.
 
+Use -h for help if you ever forget those options.
+
 ## List of tests performed
 
 ### Anti-debugging
@@ -30,7 +32,7 @@ Those two parameters can be combined.
 * Tries to debug itself by calling ptrace.
 * Measures distance of vdso and stack.
 
-Credits: those tests are from [debugmenot](https://github.com/kirschju/debugmenot).
+Credits: those tests were adapted from [debugmenot](https://github.com/kirschju/debugmenot).
 
 ### Anti-VM
 
