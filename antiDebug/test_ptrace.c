@@ -15,30 +15,3 @@ int test_ptrace_detect()
     ptrace(PTRACE_DETACH, 0, NULL, NULL);
     return RESULT_SUCCESS;
 }
-
-/*
-static int cleanup(void)
-{
-    return 0;
-}
-
-int register_test_ptrace(struct test_chain *all_tests, unsigned int test_bmp)
-{
-    struct test_chain *test;
-
-    if (!(test_bmp & (1 << TEST_ID_PTRACE)))
-        return 0;
-
-    test = test_chain_alloc_new(all_tests);
-
-    if (!test)
-        return 1 << TEST_ID_PTRACE;
-
-    test->detect = detect;
-    test->description = TEST_DESC_PTRACE;
-    test->name = TEST_NAME_PTRACE;
-    checkFirefoxHistory->cleanup = cleanup;
-
-    return 0;
-}
-*/

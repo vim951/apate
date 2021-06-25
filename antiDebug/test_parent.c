@@ -49,30 +49,3 @@ int test_parent_detect()
     free(link_target);
     return res;
 }
-
-/*
-static int cleanup(void)
-{
-    return 0;
-}
-
-int register_test_parent(struct test_chain *all_tests, unsigned int test_bmp)
-{
-    struct test_chain *test;
-
-    if (!(test_bmp & (1 << TEST_ID_PARENT)))
-        return 0;
-
-    test = test_chain_alloc_new(all_tests);
-
-    if (!test)
-        return 1 << TEST_ID_PARENT;
-
-    test->detect = detect;
-    test->description = TEST_DESC_PARENT;
-    test->name = TEST_NAME_PARENT;
-    checkFirefoxHistory->cleanup = cleanup;
-
-    return 0;
-}
-*/

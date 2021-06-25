@@ -20,30 +20,3 @@ int test_nearheap_detect(void)
         return RESULT_FAILURE;
     }
 }
-
-/*
-static int cleanup(void)
-{
-    return 0;
-}
-
-int register_test_nearheap(struct test_chain *all_tests, unsigned int test_bmp)
-{
-    struct test_chain *test;
-
-    if (!(test_bmp & (1 << TEST_ID_NEARHEAP)))
-        return 0;
-
-    test = test_chain_alloc_new(all_tests);
-
-    if (!test)
-        return 1 << TEST_ID_NEARHEAP;
-
-    test->detect = detect;
-    test->description = TEST_DESC_NEARHEAP;
-    test->name = TEST_NAME_NEARHEAP;
-    checkFirefoxHistory->cleanup = cleanup;
-
-    return 0;
-}
-*/

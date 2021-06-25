@@ -3,9 +3,6 @@
 
 int debugmenotInit();
 
-#define VERSION_MAJOR "1"
-#define VERSION_MINOR "0"
-
 #define DEBUG
 
 struct test_chain {
@@ -19,9 +16,6 @@ struct test_chain {
     const char *name;
     struct test_chain *next_test;
 };
-
-struct test_chain *test_chain_alloc_new(struct test_chain *);
-void test_chain_free_all(struct test_chain *all_tests);
 
 int aslr_active(void);
 
@@ -48,9 +42,5 @@ int aslr_active(void);
 
 extern const char *arch_strings[];
 extern unsigned int this_arch;
-
-#define TEST_DESC_LINE_LEN 52
-#define TEST_NAME_INDENT   4
-#define TEST_DESC_INDENT   8
 
 #endif

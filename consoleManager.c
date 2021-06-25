@@ -18,7 +18,7 @@
 #include <stdlib.h>
 
 //To exploit results
-#include "debugmenot/debugmenot.h"
+#include "antiDebug/debugmenot.h"
 
 enum Color{BLACK, RED, GREEN, YELLOW, BLUE, PURPLE, CYAN, WHITE, NO_COLOR};
 
