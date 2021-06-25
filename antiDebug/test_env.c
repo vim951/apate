@@ -2,12 +2,20 @@
 
 #include "test_env.h"
 
-char test_env_detect(char* resultDescriptionBuffer)
+int test_env_detect(char* resultDescriptionBuffer)
 {
     strcpy(resultDescriptionBuffer, "");
+    int result = RESULT_SUCCESS;
 
-    if (getenv("LINES") || getenv("COLUMNS"))
-        return RESULT_FAILURE; /* Debatable */
-    else
-        return RESULT_SUCCESS;
+    if (getenv("LINES")){
+        strcat(resultDescriptionBuffer, "--> Detected 'LINES' variable in the environment.\n");
+        result = RESULT_FAILURE;
+    }
+
+    if (getenv("COLUMNS")){
+        strcat(resultDescriptionBuffer, "--> Detected 'COLUMNS' variable in the environment.\n");
+        result = RESULT_FAILURE;
+    }
+
+    return result;
 }
