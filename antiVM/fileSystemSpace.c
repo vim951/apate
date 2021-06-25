@@ -2,6 +2,10 @@
 #include <sys/statvfs.h>
 #include "../constants.h"
 
+/**
+ * Check if the file system is large enough to be the one of a real computer (i.e. >= 120GB)
+ * @return RESULT_SUCCESS if it is, RESULT_FAILURE if it is not, and RESULT_UNKNOWN if sys/statvfs.h could not be used
+ */
 int checkFileSystemSpace(char* resultDescriptionBuffer){
 
     strcpy(resultDescriptionBuffer, "");

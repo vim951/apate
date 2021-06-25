@@ -2,6 +2,10 @@
 #include "../constants.h"
 #include <sys/sysinfo.h>
 
+/**
+ * Check if the memory is large enough to be the one of a real computer (i.e. >= 4GB)
+ * @return RESULT_SUCCESS if it is, RESULT_FAILURE if it is not, and RESULT_UNKNOWN if sys/sysinfo.h could not be used
+ */
 int checkRamSize(char* resultDescriptionBuffer)
 {
     strcpy(resultDescriptionBuffer, "");

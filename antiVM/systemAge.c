@@ -4,6 +4,11 @@
 const char* FILES_CHECK_AGE[]   = {".", "/"};
 const int FILES_CHECK_AGE_SIZE  = 2;
 
+
+/**
+ * Checks that no file is older than the installation files
+ * @return RESULT_SUCCESS if no such file was found, RESULT_FAILURE if one was, and RESULT_UNKNOWN if some files could not be read
+ */
 int checkSystemAgeCoherence(char* resultDescriptionBuffer){
 
     char tmp[3][128];

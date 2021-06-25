@@ -15,6 +15,10 @@ const char* KNOWN_VM_MODULES[]   = {"Vboxsf ", "vboxguest ",                    
                                     };
 const int KNOWN_VM_MODULES_SIZE  = 14;
 
+/**
+ * Looks for suspicious loaded modules
+ * @return If /proc/modules could not be opened: RESULT_UNKNOWN, else if a suspicious module was found: RESULT_FAILURE, else: RESULT_SUCCESS
+ */
 int checkLoadedModulesFromLSMOD(char* resultDescriptionBuffer){
 
     strcpy(resultDescriptionBuffer, "");

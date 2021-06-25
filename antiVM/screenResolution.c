@@ -1,6 +1,9 @@
 #include "screenResolution.h"
 
-//https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide
+/*
+ * Based on data from:
+ * https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide
+ */
 #define RESOLUTION_LIST_SIZE 9
 const int RESOLUTION_LIST[RESOLUTION_LIST_SIZE][2] = {
         {1366, 768 },
@@ -15,13 +18,9 @@ const int RESOLUTION_LIST[RESOLUTION_LIST_SIZE][2] = {
 };
 
 
-/*
-    Printing a current screen resolution by using the libX11 (worked only for Unix-like OS)
-    https://en.wikipedia.org/wiki/X_Window_System
-
-    Based on:
-        https://www.x.org/releases/X11R7.6/doc/libX11/specs/libX11/libX11.html
-        http://surfingtroves.blogspot.com/2011/01/how-to-get-screen-resolution-in-linux-c.html
+/**
+ * Checks if the screen resolution is a common one (otherwise it might be a sign that the screen is virtual)
+ * @return RESULT_SUCCESS if it is, RESULT_FAILURE if it is not, and RESULT_UNKNOWN if X11/Xlib.h could not be used
  */
 int checkDisplayResolution(char* resultDescriptionBuffer)
 {

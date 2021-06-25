@@ -5,6 +5,10 @@
 //To read files
 #include <stdio.h>
 
+/**
+ * Checks if the hypervisor flag is present in the /proc/cpuinfo file
+ * @return RESULT_SUCCESS if it is, RESULT_FAILURE if it is not, and RESULT_UNKNOWN if /proc/cpuinfo could not be read
+ */
 int checkHypervisorFlag(char* resultDescriptionBuffer){
 
     strcpy(resultDescriptionBuffer, "");
