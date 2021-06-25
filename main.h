@@ -14,14 +14,14 @@ extern int paramCompact;
 
 #include "consoleManager.h"
 
-#include "debugmenot/debugmenot.h"
-#include "debugmenot/test_env.h"
-#include "debugmenot/test_nearheap.h"
-#include "debugmenot/test_ldhook.h"
-#include "debugmenot/test_noaslr.h"
-#include "debugmenot/test_parent.h"
-#include "debugmenot/test_ptrace.h"
-#include "debugmenot/test_vdso.h"
+#include "antiDebug//debugmenot.h"
+#include "antiDebug/test_env.h"
+#include "antiDebug/test_nearheap.h"
+#include "antiDebug/test_ldhook.h"
+#include "antiDebug/test_noaslr.h"
+#include "antiDebug/test_parent.h"
+#include "antiDebug/test_ptrace.h"
+#include "antiDebug/test_vdso.h"
 
 #include "antiVM/hypervisorFlag.h"
 #include "antiVM/fileSystemSpace.h"
