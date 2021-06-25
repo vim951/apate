@@ -17,7 +17,7 @@ Those two parameters can be combined.
 ### Anti-debugging
 
 * Checks existence of LINES and COLUMNS environment variables.
-* Checks for breakpoint in _dl_debug_state.
+* Checks for breakpoint in _dl_debug_state (note: not reliable).
 * Compares beginning of the heap to address of own BSS.
 * Checks base address of ELF and shared libraries for hard-coded values used by GDB.
 * Checks if parent's name is gdb, lldb, strace or ltrace.
