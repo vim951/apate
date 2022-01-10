@@ -37,7 +37,7 @@ Use -h for help if you ever forget those options.
 * Tries to debug itself by calling ptrace.
 * Measures distance of vdso and stack.
 
-Credits: those tests were adapted from [debugmenot](https://github.com/kirschju/debugmenot).
+Credits: those tests were adapted from [debugmenot](https://github.com/kirschju/debugmenot) (under MIT License).
 
 ### Anti-VM
 
